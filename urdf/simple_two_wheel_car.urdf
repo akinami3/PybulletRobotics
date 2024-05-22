@@ -1,0 +1,370 @@
+<?xml version="1.0" ?>
+<robot name="simple_four_wheel_car">
+  <!--車体リンク-->
+  <link name="body_link">
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.3 0.3 0.1"/>
+      </geometry>
+      <material name="blue">
+        <color rgba="0 0 1 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.3 0.3 0.1"/>
+      </geometry>
+    </collision>
+    <inertial>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <mass value="10.0" />
+        <inertia ixx="0.000034533333" 
+            ixy="0"  ixz="0"
+            iyx="0"  iyy="0.000034533333" 
+            iyz="0"
+            izx="0"  izy="0"  izz="0.0000648" />
+    </inertial>
+  </link>
+
+  <!-- 左車輪リンク  -->
+  <link name="left_wheel_link">
+    <visual>
+      <origin xyz="0 0 0" rpy="1.57 0 0 "/>
+      <geometry>
+        <cylinder length="0.025" radius="0.05"/>
+      </geometry>
+      <material name="black">
+        <color rgba="0 0 0 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="1.57 0 0"/>
+      <geometry>
+        <cylinder length="0.025" radius="0.05"/>
+      </geometry>
+    </collision>
+    <inertial>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <mass value="2.0" />
+        <inertia ixx="0.000034533333" 
+            ixy="0"  ixz="0"
+            iyx="0"  iyy="0.000034533333" 
+            iyz="0"
+            izx="0"  izy="0"  izz="0.0000648" />
+    </inertial>
+  </link>
+
+  <!-- 車体リンク <-> 左車輪リンク をつなげるジョイント -->
+  <joint name="front_wheel_joint" type="continuous">
+    <parent link="body_link"/>
+    <child link="left_wheel_link"/>
+    <origin xyz="0.0 -0.1625 -0.05" rpy="0 0 0"/>
+    <axis xyz="0 1 0"/>
+  </joint>
+
+
+  <!-- 右車輪リンク  -->
+  <link name="right_wheel_link">
+    <visual>
+      <origin xyz="0 0 0" rpy="1.57 0 0 "/>
+      <geometry>
+        <cylinder length="0.025" radius="0.05"/>
+      </geometry>
+      <material name="black">
+        <color rgba="0 0 0 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="1.57 0 0 "/>
+      <geometry>
+        <cylinder length="0.025" radius="0.05"/>
+      </geometry>
+    </collision>
+    <inertial>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <mass value="2.0" />
+        <inertia ixx="0.000034533333" 
+            ixy="0"  ixz="0"
+            iyx="0"  iyy="0.000034533333" 
+            iyz="0"
+            izx="0"  izy="0"  izz="0.0000648" />
+    </inertial>
+  </link>
+
+  <!-- 車体リンク <-> 右車輪リンク をつなげるジョイント -->
+  <joint name="right_wheel_joint" type="continuous">
+    <parent link="body_link"/>
+    <child link="right_wheel_link"/>
+    <origin xyz="0.0 0.1625 -0.05" rpy="0 0 0"/>
+    <axis xyz="0 1 0"/>
+  </joint>
+
+
+  <!-- 前キャスターリンク  -->
+  <link name="front_caster_link">
+    <visual>
+      <origin xyz="0 0 0" rpy="1.57 0 0 "/>
+      <geometry>
+        <sphere radius="0.025"/>
+      </geometry>
+      <material name="black">
+        <color rgba="0 0 0 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="1.57 0 0 "/>
+      <geometry>
+        <sphere radius="0.025"/>
+      </geometry>
+    </collision>
+    <inertial>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <mass value="5.0" />
+        <inertia ixx="0.000034533333" 
+            ixy="0"  ixz="0"
+            iyx="0"  iyy="0.000034533333" 
+            iyz="0"
+            izx="0"  izy="0"  izz="0.0000648" />
+    </inertial>
+  </link>
+
+  <!-- 前キャスタージョイント  -->
+  <joint name="front_caster_joint" type="fixed">
+    <parent link="body_link"/>
+    <child link="front_caster_link"/>
+    <origin xyz="0.09 0.0 -0.075" rpy="0 0 0"/>
+    <axis xyz="0 1 0"/>
+  </joint>
+
+
+  <!-- 後キャスターリンク  -->
+  <link name="back_caster_link">
+    <visual>
+      <origin xyz="0 0 0" rpy="1.57 0 0 "/>
+      <geometry>
+        <sphere radius="0.025"/>
+      </geometry>
+      <material name="black">
+        <color rgba="0 0 0 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="1.57 0 0 "/>
+      <geometry>
+        <sphere radius="0.025"/>
+      </geometry>
+    </collision>
+    <inertial>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <mass value="5.0" />
+        <inertia ixx="0.000034533333" 
+            ixy="0"  ixz="0"
+            iyx="0"  iyy="0.000034533333" 
+            iyz="0"
+            izx="0"  izy="0"  izz="0.0000648" />
+    </inertial>
+  </link>
+
+  <!-- 後キャスタージョイント  -->
+  <joint name="back_caster_joint" type="fixed">
+    <parent link="body_link"/>
+    <child link="back_caster_link"/>
+    <origin xyz="-0.09 0.0 -0.075" rpy="0 0 0"/>
+    <axis xyz="0 1 0"/>
+  </joint>
+
+  <!--バンパー-->
+  <link name="bumper_link">
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0 "/>
+      <geometry>
+        <box size="0.01 0.3 0.1"/>
+      </geometry>
+      <material name="white">
+        <color rgba="1 0 0 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0 "/>
+      <geometry>
+        <box size="0.01 0.3 0.1"/>
+      </geometry>
+    </collision>
+    <inertial>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <mass value="0.0001" />
+        <inertia ixx="0.000034533333" 
+            ixy="0"  ixz="0"
+            iyx="0"  iyy="0.000034533333" 
+            iyz="0"
+            izx="0"  izy="0"  izz="0.0000648" />
+    </inertial>
+  </link>
+
+  <!--バンパージョイント-->
+  <joint name="bumper_joint" type="fixed">
+    <parent link="body_link"/>
+    <child link="bumper_link"/>
+    <origin xyz="0.155 0.0 0.0" rpy="0 0 0"/>
+    <axis xyz="0 0 1"/>
+  </joint>
+
+
+
+  <!--lidarリンク-->
+  <link name="lidar_link">
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0 "/>
+      <geometry>
+        <box size="0.01 0.01 0.02"/>
+      </geometry>
+      <material name="black">
+        <color rgba="0 0 0 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0 "/>
+      <geometry>
+        <box size="0.01 0.01 0.02"/>
+      </geometry>
+    </collision>
+    <inertial>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <mass value="0.0001" />
+        <inertia ixx="0.000034533333" 
+            ixy="0"  ixz="0"
+            iyx="0"  iyy="0.000034533333" 
+            iyz="0"
+            izx="0"  izy="0"  izz="0.0000648" />
+    </inertial>
+  </link>
+
+  <!--lidarジョイント-->
+  <joint name="lidar_joint" type="fixed">
+    <parent link="body_link"/>
+    <child link="lidar_link"/>
+    <origin xyz="0.0 0.0 0.065" rpy="0 0 0"/>
+    <axis xyz="0 0 1"/>
+  </joint>
+
+
+
+  <!--フロントセンサリンク-->
+  <link name="front_sensor_link">
+    <visual>
+      <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.01 0.01 0.01"/>
+      </geometry>
+      <material name="black">
+        <color rgba="0 0 0 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.01 0.01 0.01"/>
+      </geometry>
+    </collision>
+    <inertial>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <mass value="0.0001" />
+        <inertia ixx="0.000034533333" 
+            ixy="0"  ixz="0"
+            iyx="0"  iyy="0.000034533333" 
+            iyz="0"
+            izx="0"  izy="0"  izz="0.0000648" />
+    </inertial>
+  </link>
+
+  <!--車体リンク <-> フロントセンサリンク をつなげるジョイント-->
+  <joint name="front_sensor_joint" type="fixed">
+    <parent link="body_link"/>
+    <child link="front_sensor_link"/>
+    <origin xyz="0.145 0.0 0.055" rpy="0 0 0"/>
+    <axis xyz="0 0 1"/>
+  </joint>
+
+  <!--フロントセンサの注視点用の仮想的なリンク-->
+  <link name="f_target_position_vertual_link">
+    <!--何も設定しないと、質量が1kgになってしまうので、すごく小さな値に設定しておく-->
+    <inertial>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <mass value="0.0001" />
+        <inertia ixx="0.000034533333" 
+            ixy="0"  ixz="0"
+            iyx="0"  iyy="0.000034533333" 
+            iyz="0"
+            izx="0"  izy="0"  izz="0.0000648" />
+    </inertial>
+  </link>
+
+  <!--フロントセンサリンク から 少し前の位置に 注視点用リンクを設置する-->
+  <joint name="front_sensor_target_joint" type="fixed">
+    <parent link="front_sensor_link"/>
+    <child link="f_target_position_vertual_link"/>
+    <origin xyz="0.1 0.0 0.0" rpy="0 0 0"/>
+    <axis xyz="0 0 1"/>
+  </joint>
+
+
+  <!--ロボット下部センサリンク-->
+  <link name="bottom_sensor_link">
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0 "/>
+      <geometry>
+        <box size="0.01 0.01 0.01"/>
+      </geometry>
+      <material name="black">
+        <color rgba="0 0 0 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0 "/>
+      <geometry>
+        <box size="0.01 0.01 0.01"/>
+      </geometry>
+    </collision>
+    <inertial>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <mass value="0.0001" />
+        <inertia ixx="0.000034533333" 
+            ixy="0"  ixz="0"
+            iyx="0"  iyy="0.000034533333" 
+            iyz="0"
+            izx="0"  izy="0"  izz="0.0000648" />
+    </inertial>
+  </link>
+
+  <!--ロボット下部センサジョイント-->
+  <joint name="bottom_sensor_joint" type="fixed">
+    <parent link="body_link"/>
+    <child link="bottom_sensor_link"/>
+    <origin xyz="0.145 0.0 -0.055" rpy="0 0 0"/>
+    <axis xyz="0 0 1"/>
+  </joint>
+
+    <!--フロントセンサの注視点用の仮想的なリンク-->
+  <link name="b_target_position_vertual_link">
+    <!--何も設定しないと、質量が1kgになってしまうので、すごく小さな値に設定しておく-->
+    <inertial>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <mass value="0.0001" />
+        <inertia ixx="0.000034533333" 
+            ixy="0"  ixz="0"
+            iyx="0"  iyy="0.000034533333" 
+            iyz="0"
+            izx="0"  izy="0"  izz="0.0000648" />
+    </inertial>
+  </link>
+
+  <!--フロントセンサリンク から 少し前の位置に 注視点用リンクを設置する-->
+  <joint name="bottom_sensor_target_joint" type="fixed">
+    <parent link="bottom_sensor_link"/>
+    <child link="b_target_position_vertual_link"/>
+    <origin xyz="0.0 0.0 -0.01" rpy="0 0 0"/>
+    <axis xyz="0 0 1"/>
+  </joint>
+</robot>

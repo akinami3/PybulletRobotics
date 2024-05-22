@@ -1,0 +1,225 @@
+<robot name="simple_two_axis_robot">
+  <!-- ===================== base_box - link1 ==============================================-->
+  <!-- base_box -->
+  <link name="base_box">
+    <!--見た目の定義-->
+    <visual>
+      <!--linkの原点からのオフセット-->
+      <origin xyz="0 0 0.6" rpy="0 0 0"/>
+      <geometry>
+        <!--base_boxのサイズ（見た目）を指定-->
+        <box size="0.5 0.5 1.2"/>
+      </geometry>
+      <!--色の指定-->
+      <material name="white">
+        <color rgba="1 1 1 1"/>
+      </material>
+    </visual>
+
+    <!--衝突の定義（特段の理由がなければ、基本的にvisualタグと同じ設定でよい-->
+    <collision>
+      <!--linkの原点からのオフセット-->
+      <origin xyz="0 0 0.6" rpy="0 0 0"/>
+      <geometry>
+        <!--base_boxのサイズ（衝突領域）を指定-->
+        <box size="0.5 0.5 1.2"/>
+      </geometry>
+      <!--衝突に関する設定なので、materialタグはない-->
+    </collision>
+
+    <!--イナーシャ（慣性）に関する設定-->
+    <inertial>
+        <!--linkの原点からのオフセット-->
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <!--linkの重量-->
+        <mass value="1" />
+        <!--イナーシャ-->
+        <inertia ixx="0.000034533333" 
+            ixy="0"  ixz="0"
+            iyx="0"  iyy="0.000034533333" 
+            iyz="0"
+            izx="0"  izy="0"  izz="0.0000648" />
+    </inertial>
+  </link>
+
+
+  <!-- link1 -->
+  <link name="link1">
+    <!--見た目の定義-->
+    <visual>
+      <origin xyz="0 0 0.25" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.05 0.05 0.5"/>
+      </geometry>
+      <material name="red">
+        <color rgba="1 0 0 1"/>
+      </material>
+    </visual>
+      
+    <!--衝突の定義-->
+    <collision>
+      <origin xyz="0 0 0.25" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.05 0.05 0.5"/>
+      </geometry>
+    </collision>
+
+    <!--イナーシャの定義-->
+    <inertial>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <mass value="0.1" />
+        <inertia ixx="0.000034533333" 
+            ixy="0"  ixz="0"
+            iyx="0"  iyy="0.000034533333" 
+            iyz="0"
+            izx="0"  izy="0"  izz="0.0000648" />
+    </inertial>
+  </link>
+
+  <!-- joint1 （base_boxリンク と link1リンクをつなぐジョイント）-->
+  <joint name="joint1" type="continuous"> <!--回転関節-->
+    <!--親リンク-->
+    <parent link="base_box"/>
+    <!--子リンク-->
+    <child link="link1"/>
+    <!--親リンク原点⇔子リンク原点間の距離-->
+    <origin xyz="0 0.275 1.2" rpy="0 -1.57 0"/><!--ワールド座標系におけるx軸方向が0度になるように-1.57(rad)のオフセットを設定-->
+    <!--jointの軸方向-->
+    <axis xyz="0 1 0"/>
+  </joint>
+  <!-- ================================================================================== -->
+
+  <!-- ===================== link1 - link2 ==============================================-->
+  <!-- link2 -->
+  <link name="link2">
+    <!--見た目の定義-->
+    <visual>
+      <origin xyz="0 0.0 0.25" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.05 0.05 0.5"/>
+      </geometry>
+      <material name="green">
+        <color rgba="0 1 0 1"/>
+      </material>
+    </visual>
+
+    <!--衝突の定義-->
+    <collision>
+      <origin xyz="0 0.0 0.25" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.05 0.05 0.5"/>
+      </geometry>
+    </collision>
+
+    <!--イナーシャの定義-->
+    <inertial>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <mass value="0.1" />
+        <inertia ixx="0.000034533333" 
+            ixy="0"  ixz="0"
+            iyx="0"  iyy="0.000034533333" 
+            iyz="0"
+            izx="0"  izy="0"  izz="0.0000648" />
+    </inertial>
+  </link>
+
+  <!-- joint2 （link1リンク と link2リンク をつなぐジョイント） -->
+  <joint name="joint2" type="continuous">
+    <parent link="link1"/>
+    <child link="link2"/>
+    <origin xyz="0 0.05 0.5" rpy="0 0 0"/>
+    <axis xyz="0 1 0"/>
+  </joint>
+  <!-- ================================================================== -->
+
+  <link name="camera_link">
+    <!--見た目の定義-->
+    <visual>
+      <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.01 0.01 0.01"/>
+      </geometry>
+      <material name="black">
+        <color rgba="0 0 0 1"/>
+      </material>
+    </visual>
+
+    <!--衝突の定義-->
+    <collision>
+      <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.01 0.01 0.01"/>
+      </geometry>
+    </collision>
+
+    <!--イナーシャの定義-->
+    <inertial>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <mass value="0.0001" />
+        <inertia ixx="0.000034533333" 
+            ixy="0"  ixz="0"
+            iyx="0"  iyy="0.000034533333" 
+            iyz="0"
+            izx="0"  izy="0"  izz="0.0000648" />
+    </inertial>
+  </link>
+
+  <joint name="camera_joint" type="fixed">
+    <parent link="link2"/>
+    <child link="camera_link"/>
+    <origin xyz="0.03 0.0 0.495" rpy="0 0 0"/>
+    <axis xyz="0 0 1"/>
+  </joint>
+
+  <!--pybulletでカメラの目標地点として設定する用の仮想的なlink-->
+  <link name="target_position_vertual_link"/>
+
+  <joint name="camera_target_joint" type="fixed">
+    <parent link="camera_link"/>
+    <child link="target_position_vertual_link"/>
+    <origin xyz="0.0 0.0 0.01" rpy="0 0 0"/>
+    <axis xyz="0 0 1"/>
+  </joint>
+
+  <!--force sensor link###############################################################-->
+  <!-- force sensor link -->
+  <link name="force_sensor_link">
+    <!--見た目の定義-->
+    <visual>
+      <origin xyz="0 0.0 0.025" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.05 0.05 0.05"/>
+      </geometry>
+      <material name="red">
+        <color rgba="1 0 0 1"/>
+      </material>
+    </visual>
+
+    <!--衝突の定義-->
+    <collision>
+      <origin xyz="0 0.0 0.025" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.05 0.05 0.05"/>
+      </geometry>
+    </collision>
+
+    <!--イナーシャの定義-->
+    <inertial>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <mass value="0.0001" />
+        <inertia ixx="0.000034533333" 
+            ixy="0"  ixz="0"
+            iyx="0"  iyy="0.000034533333" 
+            iyz="0"
+            izx="0"  izy="0"  izz="0.0000648" />
+    </inertial>
+  </link>
+
+  <joint name="force_sensor_joint" type="fixed">
+    <parent link="link2"/>
+    <child link="force_sensor_link"/>
+    <origin xyz="0.0 0.0 0.5" rpy="0 0 0"/>
+    <axis xyz="0 0 1"/>
+  </joint>
+
+</robot>

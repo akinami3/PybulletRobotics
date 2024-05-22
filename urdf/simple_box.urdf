@@ -1,0 +1,45 @@
+<?xml version="1.0" ?>
+<robot name="simple_two_axis_robot">
+  <!-- ===================== base_box - link1 ==============================================-->
+  <!-- base_box -->
+  <link name="box_link">
+    <!--見た目の定義-->
+    <visual>
+      <!--linkの原点からのオフセット-->
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <!--base_boxのサイズ（見た目）を指定-->
+        <box size="1 1 1"/>
+      </geometry>
+      <!--色の指定-->
+      <material name="red">
+        <color rgba="1 0 0 1"/>
+      </material>
+    </visual>
+
+    <!--衝突の定義（特段の理由がなければ、基本的にvisualタグと同じ設定でよい-->
+    <collision>
+      <!--linkの原点からのオフセット-->
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <!--base_boxのサイズ（衝突領域）を指定-->
+        <box size="1 1 1"/>
+      </geometry>
+      <!--衝突に関する設定なので、materialタグはない-->
+    </collision>
+
+    <!--イナーシャ（慣性）に関する設定-->
+    <inertial>
+        <!--linkの原点からのオフセット-->
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <!--linkの重量-->
+        <mass value="1" />
+        <!--イナーシャ-->
+        <inertia ixx="0.000034533333" 
+            ixy="0"  ixz="0"
+            iyx="0"  iyy="0.000034533333" 
+            iyz="0"
+            izx="0"  izy="0"  izz="0.0000648" />
+    </inertial>
+  </link>
+</robot>
