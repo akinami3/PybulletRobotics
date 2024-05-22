@@ -75,7 +75,7 @@ pip install scipy
 - urdfファイルからのロボットの読み込み
 - シミュレーションの実行
 
-詳細は「[pybullet_basic.ipynb](https://github.com/akinami3/PybulletRobotics/PybulletBasic/pybullet_basic.ipynb)」を参照。
+詳細は「[pybullet_basic.ipynb](https://github.com/akinami3/PybulletRobotics/blob/main/PybulletBasic/pybullet_basic.ipynb)」を参照。
 
 # 移動ロボット
 
@@ -88,7 +88,7 @@ pip install scipy
 <img src="./images/mobile_robot_basic.gif" width="65%">
 
 
-詳細は「[mobile_robot_basic.ipynb](https://github.com/akinami3/PybulletRobotics/MobileRobot/mobile_robot_basic.ipynb)」を参照。
+詳細は「[mobile_robot_basic.ipynb](https://github.com/akinami3/PybulletRobotics/blob/main/MobileRobot/mobile_robot_basic.ipynb)」を参照。
 
 ### 移動ロボットにおけるセンサーの利用
 2輪移動ロボットにおける以下のセンサーの利用方法を紹介します。
@@ -125,14 +125,14 @@ pip install scipy
 **バンパー**   
 ![](./images/bumper_sensor.gif)
 
-詳細は「[mobile_robot_sensor.ipynb](https://github.com/akinami3/PybulletRobotics/MobileRobot/mobile_robot_sensor.ipynb)」を参照。
+詳細は「[mobile_robot_sensor.ipynb](https://github.com/akinami3/PybulletRobotics/blob/main/MobileRobot/mobile_robot_sensor.ipynb)」を参照。
 
 ## 移動ロボットによるライントレース
 2輪の輪動ロボットのボトムカメラを使用してライントレースを行う方法を紹介します。
 
 <img src="./images/mobile_robot_line_trace.gif" width="55%">
 
-詳細は「[mobile_robot_line_trace.ipynb](https://github.com/akinami3/PybulletRobotics/MobileRobot/mobile_robot_line_trace.ipynb)」を参照。
+詳細は「[mobile_robot_line_trace.ipynb](https://github.com/akinami3/PybulletRobotics/blob/main/MobileRobot/mobile_robot_line_trace.ipynb)」を参照。
 
 ## そのた追加予定のコンテンツ
 - 経路計画
@@ -160,7 +160,7 @@ pip install scipy
 
 <img src="./images/robot_arm_basic_velocity_control.gif" width="55%">
 
-詳細は「[robot_arm_basic.ipynb](https://github.com/akinami3/PybulletRobotics/RobotArm/robot_arm_basic.ipynb)」を参照。
+詳細は「[robot_arm_basic.ipynb](https://github.com/akinami3/PybulletRobotics/blob/main/RobotArm/robot_arm_basic.ipynb)」を参照。
 
 ### ロボットアームにおけるセンサーの利用
 2軸ロボットアームにおける以下のセンサーの利用方法を紹介します。
@@ -182,14 +182,14 @@ pip install scipy
 <img src="./images/robot_arm_tip_force_sensor.gif" width="55%">
 
 
-詳細は「[robot_arm_sensor.ipynb](https://github.com/akinami3/PybulletRobotics/RobotArm/robot_arm_sensor.ipynb)」を参照。
+詳細は「[robot_arm_sensor.ipynb](https://github.com/akinami3/PybulletRobotics/blob/main/RobotArm/robot_arm_sensor.ipynb)」を参照。
 
 ### 衝突判定
 ロボットアームと物体の衝突判定を行う方法を紹介します。
 
 <img src="./images/robot_arm_collision_check.gif" width="55%">
 
-詳細は「[robot_arm_collision_check.ipynb](https://github.com/akinami3/PybulletRobotics/RobotArm/robot_arm_collision_check.ipynb)」を参照。
+詳細は「[robot_arm_collision_check.ipynb](https://github.com/akinami3/PybulletRobotics/blob/main/RobotArm/robot_arm_collision_check.ipynb)」を参照。
 
 ## 運動学
 
@@ -197,28 +197,28 @@ pip install scipy
 後日追記予定
 <!-- 三角関数を用いたロボットアームの順運動学を紹介します。
 
-詳細は「[robot_arm_trigonometric_forward_kinematics.ipynb](https://github.com/akinami3/PybulletRobotics/RobotArm/robot_arm_trigonometric_forward_kinematics.ipynb)」を参照。 -->
+詳細は「[robot_arm_trigonometric_forward_kinematics.ipynb](https://github.com/akinami3/PybulletRobotics/blob/main/RobotArm/robot_arm_trigonometric_forward_kinematics.ipynb)」を参照。 -->
 
 ### 同次変換行列を用いた順運動学（後日追記予定）
 後日追記予定
 
 <!-- 同次変換行列を用いたロボットアームの順運動学を紹介します。
 
-詳細は「[robot_arm_homogeneous_matrix_forward_kinematics.ipynb](https://github.com/akinami3/PybulletRobotics/RobotArm/robot_arm_homogeneous_matrix_forward_kinematics.ipynb)」を参照。 -->
+詳細は「[robot_arm_homogeneous_matrix_forward_kinematics.ipynb](https://github.com/akinami3/PybulletRobotics/blob/main/RobotArm/robot_arm_homogeneous_matrix_forward_kinematics.ipynb)」を参照。 -->
 
 ### 解析的解法による逆運動学（後日追記予定）
 後日追記予定
 
 <!-- 解析的解法を用いたロボットアームの逆運動学を紹介します。
 
-詳細は「[robot_arm_analytical_inverse_kinematics.ipynb](https://github.com/akinami3/PybulletRobotics/RobotArm/robot_arm_analytical_inverse_kinematics.ipynb)」を参照。 -->
+詳細は「[robot_arm_analytical_inverse_kinematics.ipynb](https://github.com/akinami3/PybulletRobotics/blob/main/RobotArm/robot_arm_analytical_inverse_kinematics.ipynb)」を参照。 -->
 
 ### 数値的解法によるヤコビ行列を用いた逆運動学（後日追記予定）
 後日追記予定
 
 <!-- 数値的解法を用いたロボットアームの逆運動学を紹介します。
 
-詳細は「[robot_arm_jacobian_inverse_kinematics.ipynb](https://github.com/akinami3/PybulletRobotics/RobotArm/robot_arm_jacobian_inverse_kinematics.ipynb)」を参照。 -->
+詳細は「[robot_arm_jacobian_inverse_kinematics.ipynb](https://github.com/akinami3/PybulletRobotics/blob/main/RobotArm/robot_arm_jacobian_inverse_kinematics.ipynb)」を参照。 -->
 
 ## その他、追加予定のコンテンツ
 - PID制御
