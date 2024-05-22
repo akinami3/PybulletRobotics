@@ -1,5 +1,7 @@
 # PybulletRobotics
 
+【[English version](https://github.com/akinami3/PybulletRobotics/blob/main/README_en.md)】
+
 本リポジトリでは、ロボティクスにおけるpybulletの基本的な使用方法や、ロボティクスに関連する様々なアルゴリズムをpybulletを用いて実装する方法を紹介します。
 
 # 目次
