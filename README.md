@@ -85,7 +85,7 @@ pip install scipy
 ### 移動ロボットの基本的な制御
 2輪移動ロボットを移動させるシンプルなコードを紹介します。
 
-<img src="./images/mobile_robot_basic.gif" width="65%">
+<img src="./images/Common/mobile_robot_basic.gif" width="65%">
 
 
 詳細は「[mobile_robot_basic.ipynb](https://github.com/akinami3/PybulletRobotics/blob/main/MobileRobot/mobile_robot_basic.ipynb)」を参照。
@@ -98,39 +98,39 @@ pip install scipy
 - 落下防止センサー
 - バンパー
 
-<img src="./images/mobile_robot_sensor.png" width="80%">  
+<img src="./images/MobileRobot/mobile_robot_sensor.png" width="80%">  
 
 <br>
 
 **超音波センサ**  
-![](./images/ultra_sonic_sensor.gif)
+![](./images/Common/ultra_sonic_sensor.gif)
 
 <br>
 
 **カメラ**  
-![](./images/camera.gif)
+![](./images/Common/camera.gif)
 
 <br>
 
 **Lidar**  
-![](./images/Lidar.gif)
+![](./images/Common/Lidar.gif)
 
 <br>
 
 **落下防止センサー**  
-<img src="./images/protect_drop_sensor.gif" width="55%">  
+<img src="./images/Common/protect_drop_sensor.gif" width="55%">  
 
 <br>
 
 **バンパー**   
-![](./images/bumper_sensor.gif)
+![](./images/Common/bumper_sensor.gif)
 
 詳細は「[mobile_robot_sensor.ipynb](https://github.com/akinami3/PybulletRobotics/blob/main/MobileRobot/mobile_robot_sensor.ipynb)」を参照。
 
 ## 移動ロボットによるライントレース
 2輪の輪動ロボットのボトムカメラを使用してライントレースを行う方法を紹介します。
 
-<img src="./images/mobile_robot_line_trace.gif" width="55%">
+<img src="./images/Common/mobile_robot_line_trace.gif" width="55%">
 
 詳細は「[mobile_robot_line_trace.ipynb](https://github.com/akinami3/PybulletRobotics/blob/main/MobileRobot/mobile_robot_line_trace.ipynb)」を参照。
 
@@ -152,13 +152,13 @@ pip install scipy
 
 **位置制御**
 
-<img src="./images/robot_arm_basic_position_control.gif" width="55%">
+<img src="./images/Common/robot_arm_basic_position_control.gif" width="55%">
 
 <br>
 
 **速度制御**
 
-<img src="./images/robot_arm_basic_velocity_control.gif" width="55%">
+<img src="./images/Common/robot_arm_basic_velocity_control.gif" width="55%">
 
 詳細は「[robot_arm_basic.ipynb](https://github.com/akinami3/PybulletRobotics/blob/main/RobotArm/robot_arm_basic.ipynb)」を参照。
 
@@ -167,19 +167,19 @@ pip install scipy
 - 手先のカメラ
 - 手先の力センサー
 
-<img src="./images/2d_robot_arm_sensor.png" width="80%">
+<img src="./images/RobotArm/2d_robot_arm_sensor.png" width="80%">
 
 <br>
 
 **手先のカメラ**
 
-<img src="./images/robot_arm_tip_camera.gif" width="55%">
+<img src="./images/Common/robot_arm_tip_camera.gif" width="55%">
 
 <br>
 
 **手先の力センサー**
 
-<img src="./images/robot_arm_tip_force_sensor.gif" width="55%">
+<img src="./images/Common/robot_arm_tip_force_sensor.gif" width="55%">
 
 
 詳細は「[robot_arm_sensor.ipynb](https://github.com/akinami3/PybulletRobotics/blob/main/RobotArm/robot_arm_sensor.ipynb)」を参照。
@@ -187,7 +187,7 @@ pip install scipy
 ### 衝突判定
 ロボットアームと物体の衝突判定を行う方法を紹介します。
 
-<img src="./images/robot_arm_collision_check.gif" width="55%">
+<img src="./images/Common/robot_arm_collision_check.gif" width="55%">
 
 詳細は「[robot_arm_collision_check.ipynb](https://github.com/akinami3/PybulletRobotics/blob/main/RobotArm/robot_arm_collision_check.ipynb)」を参照。
 
@@ -196,14 +196,16 @@ pip install scipy
 ### 三角関数による順運動学
 三角関数を用いたロボットアームの順運動学を紹介します。
 
+![](./images/RobotArm/robot_arm_trigonometric_forward_kinematics/2d_arm_forward_kinematics_overview.png)
+
 詳細は「[robot_arm_trigonometric_forward_kinematics.ipynb](https://github.com/akinami3/PybulletRobotics/blob/main/RobotArm/robot_arm_trigonometric_forward_kinematics.ipynb)」を参照。
 
 ### 同次変換行列を用いた順運動学（後日追記予定）
-後日追記予定
+同次変換行列を用いたロボットアームの順運動学を紹介します。
 
-<!-- 同次変換行列を用いたロボットアームの順運動学を紹介します。
+![](./images/RobotArm/robot_arm_homogeneous_matrix_forward_kinematics/overview.gif)
 
-詳細は「[robot_arm_homogeneous_matrix_forward_kinematics.ipynb](https://github.com/akinami3/PybulletRobotics/blob/main/RobotArm/robot_arm_homogeneous_matrix_forward_kinematics.ipynb)」を参照。 -->
+詳細は「[robot_arm_homogeneous_matrix_forward_kinematics.ipynb](https://github.com/akinami3/PybulletRobotics/blob/main/RobotArm/robot_arm_homogeneous_matrix_forward_kinematics.ipynb)」を参照。
 
 ### 解析的解法による逆運動学（後日追記予定）
 後日追記予定
