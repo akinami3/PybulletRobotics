@@ -20,7 +20,7 @@
     - [衝突判定](#衝突判定)
   - [運動学](#運動学)
     - [三角関数による順運動学](#三角関数による順運動学)
-    - [同次変換行列を用いた順運動学（後日追記予定）](#同次変換行列を用いた順運動学後日追記予定)
+    - [同次変換行列を用いた順運動学](#同次変換行列を用いた順運動学)
     - [解析的解法による逆運動学（後日追記予定）](#解析的解法による逆運動学後日追記予定)
     - [数値的解法によるヤコビ行列を用いた逆運動学（後日追記予定）](#数値的解法によるヤコビ行列を用いた逆運動学後日追記予定)
   - [その他、追加予定のコンテンツ](#その他追加予定のコンテンツ)
@@ -200,7 +200,7 @@ pip install scipy
 
 詳細は「[robot_arm_trigonometric_forward_kinematics.ipynb](https://github.com/akinami3/PybulletRobotics/blob/main/RobotArm/robot_arm_trigonometric_forward_kinematics.ipynb)」を参照。
 
-### 同次変換行列を用いた順運動学（後日追記予定）
+### 同次変換行列を用いた順運動学
 同次変換行列を用いたロボットアームの順運動学を紹介します。
 
 ![](./images/RobotArm/robot_arm_homogeneous_matrix_forward_kinematics/overview.gif)
