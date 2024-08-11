@@ -148,7 +148,7 @@ pip install scipy
 ## 基本
 
 ### ロボットアームの基本的な制御
-2軸ロボットアームを制御（位置制御、速度制御）するシンプルなコードを紹介します。
+2軸ロボットアームを制御（位置制御、速度制御、トルク制御）するシンプルなコードを紹介します。
 
 **位置制御**
 
@@ -160,7 +160,16 @@ pip install scipy
 
 <img src="./images/Common/robot_arm_basic_velocity_control.gif" width="55%">
 
+
+<br>
+
+**トルク制御**
+
+<img src="./images/Common/robot_arm_basic_torque_control.gif" width="55%">
+
+
 詳細は「[robot_arm_basic.ipynb](https://github.com/akinami3/PybulletRobotics/blob/main/RobotArm/robot_arm_basic.ipynb)」を参照。
+
 
 ### ロボットアームにおけるセンサーの利用
 2軸ロボットアームにおける以下のセンサーの利用方法を紹介します。
