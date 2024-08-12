@@ -1,0 +1,52 @@
+<robot name="simple_camera">
+  <link name="world"/>
+  <joint name="world_joint" type="fixed">
+    <parent link="world"/>
+    <child link="camera_link"/>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+  </joint>
+  <!-- ===================== camera - target_position ==============================================-->
+  <!-- camera -->
+  <link name="camera_link">
+    <!--見た目の定義-->
+    <visual>
+      <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.1 0.1 0.1"/>
+      </geometry>
+      <material name="black">
+        <color rgba="0 0 0 1"/>
+      </material>
+    </visual>
+
+    <!--衝突の定義-->
+    <collision>
+      <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.1 0.1 0.1"/>
+      </geometry>
+    </collision>
+
+    <!--イナーシャの定義-->
+    <inertial>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <mass value="0.0001" />
+        <inertia ixx="0.000034533333" 
+            ixy="0"  ixz="0"
+            iyx="0"  iyy="0.000034533333" 
+            iyz="0"
+            izx="0"  izy="0"  izz="0.0000648" />
+    </inertial>
+  </link>
+
+  <!--pybulletでカメラの目標地点として設定する用の仮想的なlink-->
+  <link name="target_position_vertual_link"/>
+
+  <joint name="camera_target_joint" type="fixed">
+    <parent link="camera_link"/>
+    <child link="target_position_vertual_link"/>
+    <origin xyz="0.01 0.0 0.0" rpy="0 0 0"/>
+    <axis xyz="0 0 1"/>
+  </joint>
+
+</robot>

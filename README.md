@@ -6,7 +6,9 @@
 - [PybulletRobotics](#pybulletrobotics)
 - [目次](#目次)
 - [インストール方法](#インストール方法)
-- [ロボティクスにおけるpybulletの基本的な使用方法](#ロボティクスにおけるpybulletの基本的な使用方法)
+- [全般](#全般)
+  - [Pybulletの基本的な使用方法](#pybulletの基本的な使用方法)
+  - [ARマーカーの位置·姿勢の検出](#arマーカーの位置姿勢の検出)
 - [移動ロボット](#移動ロボット)
   - [基本](#基本)
     - [移動ロボットの基本的な制御](#移動ロボットの基本的な制御)
@@ -24,6 +26,8 @@
     - [解析的解法による逆運動学（後日追記予定）](#解析的解法による逆運動学後日追記予定)
     - [数値的解法によるヤコビ行列を用いた逆運動学（後日追記予定）](#数値的解法によるヤコビ行列を用いた逆運動学後日追記予定)
   - [その他、追加予定のコンテンツ](#その他追加予定のコンテンツ)
+- [参考サイトなど](#参考サイトなど)
+  - [筆者作成](#筆者作成)
 
 
 <!-- 本リポジトリで（現時点では）扱っていない主要そうなロボット
@@ -38,7 +42,9 @@
 # インストール方法
 pybulletでロボティクスのシミュレーションを実施する際に必要なライブラリをインストールする手順は以下になります。
 
-環境：Ubuntu (WSLでも可)
+なお、動作確認した際の各ライブラリのバージョンは、各コマンドの隣にコメントとして記載しています。
+
+動作確認環境：Ubuntu (WSLでも可)
 
 ```bash
 sudo apt update
@@ -49,33 +55,48 @@ sudo apt install python3-pip
 ```
 
 ```bash
-pip3 install pybullet
+pip3 install pybullet # version 3.2.6
 ```
 
 ```bash
-pip3 install numpy
+pip3 install numpy # version 1.24.3
 ```
 
 ```bash
-pip3 install matplotlib
+pip3 install matplotlib # version 3.5.1
 ```
 
 ```bash
-pip3 install opencv-contrib-python
+pip3 install opencv-contrib-python # version 4.5.4
 ```
 
 ```bash
-pip install scipy
+pip install scipy # version 1.11.3
 ```
 
 
-# ロボティクスにおけるpybulletの基本的な使用方法
+# 全般
+## Pybulletの基本的な使用方法
 以下に示すpybulletを用いたロボティクスの基本的な使用方法を紹介します。
 - 環境の作成
 - urdfファイルからのロボットの読み込み
 - シミュレーションの実行
 
 詳細は「[pybullet_basic.ipynb](https://github.com/akinami3/PybulletRobotics/blob/main/PybulletBasic/pybullet_basic.ipynb)」を参照。
+
+## ARマーカーの位置·姿勢の検出
+カメラから取得した画像から、ARマーカーの位置と姿勢を検出する方法を紹介します。
+
+![](./images/Common/ar_marker_detect/ar_marker_detect.gif)
+
+<br>
+
+また、ARマーカを貼り付けたボックスを作成する方法も紹介します（blenderを使用）。
+
+<img src="./images/Common/ar_marker_detect/ar_marker_blender.png" width="75%">
+
+
+詳細は「[ar_marker_detect.ipynb](https://github.com/akinami3/PybulletRobotics/blob/main/PybulletBasic/ar_marker_detect.ipynb)」を参照。
 
 # 移動ロボット
 
@@ -240,3 +261,12 @@ pip install scipy
 <!-- - インピーダンス制御 -->
 <!-- - ビジュアルサーボ -->
 
+# 参考サイトなど
+
+- [pybullet_quickstart_guide](https://qiita.com/akinami/items/eb0741b0d9c322e5d5ec)：Pybulletで使用可能な関数がまとめられたスタートガイドです（公式）
+- [PythonRobotics](https://qiita.com/akinami/items/eb0741b0d9c322e5d5ec)：Pythonで実装されたロボティクスのアルゴリズムがまとめられたリポジトリです。様々なアルゴリズムが掲載されており、ロボティクスの勉強に最適な神リポジトリです。
+
+
+## 筆者作成
+- [pybulletの公式サンプル129個を全部解説する - Qiita](https://qiita.com/akinami/items/7b433b60aeb5115ba4d7)：pybulletの公式サンプル129個を解説（する予定の）記事です
+- [【図解】ロボティクスの辞書【python】](https://qiita.com/akinami/items/eb0741b0d9c322e5d5ec)：ロボティクスに関する技術を解説した記事の、まとめ記事です
