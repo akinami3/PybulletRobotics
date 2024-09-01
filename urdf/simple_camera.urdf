@@ -1,7 +1,7 @@
 <robot name="simple_camera">
-  <link name="world"/>
+  <link name="base_link"/>
   <joint name="world_joint" type="fixed">
-    <parent link="world"/>
+    <parent link="base_link"/>
     <child link="camera_link"/>
     <origin xyz="0 0 0" rpy="0 0 0"/>
   </joint>
