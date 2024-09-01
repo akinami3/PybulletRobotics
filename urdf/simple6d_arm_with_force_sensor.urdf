@@ -1,0 +1,445 @@
+<?xml version="1.0" ?>
+<robot name="simple_six_axis_robot">
+  <!-- ===================== base_box - link1 ==============================================-->
+  <!-- base_box -->
+  <link name="base_link">
+    <!--見た目の定義-->
+    <visual>
+      <!--linkの原点からのオフセット-->
+      <origin xyz="0 0 0.5" rpy="0 0 0"/>
+      <geometry>
+        <!--base_boxのサイズ（見た目）を指定-->
+        <cylinder radius="0.15" length="1.0"/>
+      </geometry>
+      <!--色の指定-->
+      <material name="white">
+        <color rgba="1 1 1 1"/>
+      </material>
+    </visual>
+
+    <!--衝突の定義（特段の理由がなければ、基本的にvisualタグと同じ設定でよい-->
+    <collision>
+      <!--linkの原点からのオフセット-->
+      <origin xyz="0 0 0.5" rpy="0 0 0"/>
+      <geometry>
+        <!--base_boxのサイズ（衝突領域）を指定-->
+        <cylinder radius="0.15" length="1.0"/>
+      </geometry>
+      <!--衝突に関する設定なので、materialタグはない-->
+    </collision>
+
+    <!--イナーシャ（慣性）に関する設定-->
+    <inertial>
+        <!--linkの原点からのオフセット-->
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <!--linkの重量-->
+        <mass value="1" />
+        <!--イナーシャ-->
+        <inertia ixx="0.000034533333" 
+            ixy="0"  ixz="0"
+            iyx="0"  iyy="0.000034533333" 
+            iyz="0"
+            izx="0"  izy="0"  izz="0.0000648" />
+    </inertial>
+  </link>
+
+  <!-- link1 -->
+  <link name="link1">
+    <!--見た目の定義-->
+    <visual>
+      <origin xyz="0 0 0.15" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.1 0.1 0.3"/>
+      </geometry>
+      <material name="red">
+        <color rgba="1 0 0 1"/>
+      </material>
+    </visual>
+      
+    <!--衝突の定義-->
+    <collision>
+      <origin xyz="0 0 0.15" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.1 0.1 0.3"/>
+      </geometry>
+    </collision>
+
+    <!--イナーシャの定義-->
+    <inertial>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <mass value="0.1" />
+        <inertia ixx="0.000034533333" 
+            ixy="0"  ixz="0"
+            iyx="0"  iyy="0.000034533333" 
+            iyz="0"
+            izx="0"  izy="0"  izz="0.0000648" />
+    </inertial>
+  </link>
+
+  <!-- joint1 （base_boxリンク と link1リンクをつなぐジョイント）-->
+  <joint name="joint1" type="revolute">
+  <!-- <joint name="joint1" type="continuous"> -->
+    <!--親リンク-->
+    <parent link="base_link"/>
+    <!--子リンク-->
+    <child link="link1"/>
+    <!--親リンク原点⇔子リンク原点間の距離-->
+    <origin xyz="0 0 1.1" rpy="0 0 0"/>
+    <!-- <origin xyz="0 0 1.1" rpy="0 0 3.14"/> -->
+    <!-- <origin xyz="0 0 0.9" rpy="0 0 0"/> -->
+    <!-- <origin xyz="0 0 1.2" rpy="0 0 0"/> -->
+    <!--jointの軸方向-->
+    <axis xyz="0 0 1"/>
+    <limit lower="-1.57" upper="1.57" effort="10" velocity="10"/>
+    <!-- <limit lower="-3.14" upper="3.14" effort="10" velocity="10"/> -->
+    <!-- <limit lower="0" upper="3.14" effort="10" velocity="10"/> -->
+  </joint>
+  <!-- ================================================================================== -->
+
+  <!-- ===================== link1 - link2 ==============================================-->
+  <!-- link2 -->
+  <link name="link2">
+    <!--見た目の定義-->
+    <visual>
+      <origin xyz="0 0.0 0.25" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.1 0.1 0.5"/>
+      </geometry>
+      <material name="green">
+        <color rgba="0 1 0 1"/>
+      </material>
+    </visual>
+
+    <!--衝突の定義-->
+    <collision>
+      <origin xyz="0 0.0 0.25" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.1 0.1 0.5"/>
+      </geometry>
+    </collision>
+
+    <!--イナーシャの定義-->
+    <inertial>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <mass value="0.1" />
+        <inertia ixx="0.000034533333" 
+            ixy="0"  ixz="0"
+            iyx="0"  iyy="0.000034533333" 
+            iyz="0"
+            izx="0"  izy="0"  izz="0.0000648" />
+    </inertial>
+  </link>
+
+  <!-- joint2 （link1リンク と link2リンク をつなぐジョイント） -->
+  <joint name="joint2" type="revolute">
+  <!-- <joint name="joint2" type="continuous"> -->
+    <parent link="link1"/>
+    <child link="link2"/>
+    <!-- <origin xyz="0 0.1 0.3" rpy="0 0 0"/> -->
+    <origin xyz="0 0 0.3" rpy="0 0 0"/>
+    <limit lower="-1.57" upper="1.57" effort="10" velocity="10"/>
+    <!-- <limit lower="-3.14" upper="3.14" effort="10" velocity="10"/> -->
+    <!-- <limit lower="-1.47" upper="1.47" effort="10" velocity="10"/> -->
+
+    <axis xyz="0 1 0"/>
+  </joint>
+  <!-- ================================================================== -->
+
+  <!-- ===================== link2 - link3 ==============================================-->
+  <!-- link3 -->
+  <link name="link3">
+    <!--見た目の定義-->
+    <visual>
+      <origin xyz="0 0.0 0.25" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.1 0.1 0.5"/>
+      </geometry>
+      <material name="red">
+        <color rgba="1 0 0 1"/>
+      </material>
+    </visual>
+
+    <!--衝突の定義-->
+    <collision>
+      <origin xyz="0 0.0 0.25" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.1 0.1 0.5"/>
+      </geometry>
+    </collision>
+
+    <!--イナーシャの定義-->
+    <inertial>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <mass value="0.1" />
+        <inertia ixx="0.000034533333" 
+            ixy="0"  ixz="0"
+            iyx="0"  iyy="0.000034533333" 
+            iyz="0"
+            izx="0"  izy="0"  izz="0.0000648" />
+    </inertial>
+  </link>
+
+  <!-- joint3 （link2リンク と link3リンク をつなぐジョイント） -->
+  <joint name="joint3" type="revolute">
+  <!-- <joint name="joint3" type="continuous"> -->
+    <parent link="link2"/>
+    <child link="link3"/>
+    <!-- <origin xyz="0 0.1 0.5" rpy="0 0 0"/> -->
+    <origin xyz="0 0 0.5" rpy="0 0 0"/>
+    <axis xyz="0 1 0"/>
+    <!-- <limit lower="-3.14" upper="3.14" effort="10" velocity="10"/> -->
+    <limit lower="-1.57" upper="1.57" effort="10" velocity="10"/>
+    <!-- <limit lower="-1.47" upper="1.47" effort="10" velocity="10"/> -->
+
+  </joint>
+  <!-- ================================================================== -->
+
+  <!-- ===================== link3 - link4 ==============================================-->
+  <!-- link4 -->
+  <link name="link4">
+    <!--見た目の定義-->
+    <visual>
+      <origin xyz="0 0.0 0.05" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.1 0.1 0.1"/>
+      </geometry>
+      <material name="blue">
+        <color rgba="0 1 0 1"/>
+      </material>
+    </visual>
+
+    <!--衝突の定義-->
+    <collision>
+      <origin xyz="0 0.0 0.05" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.1 0.1 0.1"/>
+      </geometry>
+    </collision>
+
+    <!--イナーシャの定義-->
+    <inertial>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <mass value="0.1" />
+        <inertia ixx="0.000034533333" 
+            ixy="0"  ixz="0"
+            iyx="0"  iyy="0.000034533333" 
+            iyz="0"
+            izx="0"  izy="0"  izz="0.0000648" />
+    </inertial>
+  </link>
+
+  <!-- joint4 （link3リンク と link4リンク をつなぐジョイント） -->
+  <joint name="joint4" type="revolute">
+  <!-- <joint name="joint3" type="continuous"> -->
+    <parent link="link3"/>
+    <child link="link4"/>
+    <origin xyz="0 0 0.5" rpy="0 0 0"/>
+    <axis xyz="0 0 1"/>
+    <!-- <limit lower="-3.14" upper="3.14" effort="10" velocity="10"/> -->
+    <limit lower="-1.57" upper="1.57" effort="10" velocity="10"/>
+    <!-- <limit lower="-1.47" upper="1.47" effort="10" velocity="10"/> -->
+
+  </joint>
+  <!-- ================================================================== -->
+
+
+  <!-- ===================== link4 - link5 ==============================================-->
+  <!-- link5 -->
+  <link name="link5">
+    <!--見た目の定義-->
+    <visual>
+      <origin xyz="0.0 0 0.05" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.25 0.25 0.1"/>
+      </geometry>
+      <material name="red">
+        <color rgba="1 0 0 1"/>
+      </material>
+    </visual>
+
+    <!--衝突の定義-->
+    <collision>
+      <origin xyz="0.0 0 0.05" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.25 0.25 0.1"/>
+      </geometry>
+    </collision>
+
+    <!--イナーシャの定義-->
+    <inertial>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <mass value="0.1" />
+        <inertia ixx="0.000034533333" 
+            ixy="0"  ixz="0"
+            iyx="0"  iyy="0.000034533333" 
+            iyz="0"
+            izx="0"  izy="0"  izz="0.0000648" />
+    </inertial>
+  </link>
+
+  <!-- joint5 （link4リンク と link5リンク をつなぐジョイント） -->
+  <joint name="joint5" type="revolute">
+  <!-- <joint name="joint3" type="continuous"> -->
+    <parent link="link4"/>
+    <child link="link5"/>
+    <!-- <origin xyz="0 0.175 0.25" rpy="0 0 0"/> -->
+    <origin xyz="0 0 0.1" rpy="0 0 0"/>
+    <axis xyz="0 1 0"/>
+    <!-- <limit lower="-3.14" upper="3.14" effort="10" velocity="10"/> -->
+    <limit lower="-1.57" upper="1.57" effort="10" velocity="10"/>
+    <!-- <limit lower="-1.47" upper="1.47" effort="10" velocity="10"/> -->
+
+  </joint>
+  <!-- ================================================================== -->
+
+  <!-- ===================== link5 - link6 ==============================================-->
+  <!-- link6 -->
+  <link name="link6">
+    <!--見た目の定義-->
+    <visual>
+      <origin xyz="0 0.0 0.075" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.15 0.15 0.15"/>
+      </geometry>
+      <material name="blue">
+        <color rgba="0 1 0 1"/>
+      </material>
+    </visual>
+
+    <!--衝突の定義-->
+    <collision>
+      <origin xyz="0 0.0 0.075" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.15 0.15 0.15"/>
+      </geometry>
+    </collision>
+
+    <!--イナーシャの定義-->
+    <inertial>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <mass value="0.1" />
+        <inertia ixx="0.000034533333" 
+            ixy="0"  ixz="0"
+            iyx="0"  iyy="0.000034533333" 
+            iyz="0"
+            izx="0"  izy="0"  izz="0.0000648" />
+    </inertial>
+  </link>
+
+  <!-- joint6 （link5リンク と link6リンク をつなぐジョイント） -->
+  <joint name="joint6" type="revolute">
+  <!-- <joint name="joint3" type="continuous"> -->
+    <parent link="link5"/>
+    <child link="link6"/>
+    <origin xyz="0 0 0.1" rpy="0 0 0"/>
+    <axis xyz="0 0 1"/>
+    <limit lower="-3.14" upper="3.14" effort="10" velocity="10"/>
+    <!-- <limit lower="-1.57" upper="1.57" effort="10" velocity="10"/> -->
+    <!-- <limit lower="-1.47" upper="1.47" effort="10" velocity="10"/> -->
+
+  </joint>
+  <!-- ================================================================== -->
+
+
+  <link name="camera_link">
+    <!--見た目の定義-->
+    <visual>
+      <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.01 0.01 0.01"/>
+      </geometry>
+      <material name="black">
+        <color rgba="0 0 0 1"/>
+      </material>
+    </visual>
+
+    <!--衝突の定義-->
+    <collision>
+      <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.01 0.01 0.01"/>
+      </geometry>
+    </collision>
+
+    <!--イナーシャの定義-->
+    <inertial>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <mass value="0.0001" />
+        <inertia ixx="0.000034533333" 
+            ixy="0"  ixz="0"
+            iyx="0"  iyy="0.000034533333" 
+            iyz="0"
+            izx="0"  izy="0"  izz="0.0000648" />
+    </inertial>
+  </link>
+
+  <joint name="camera_joint" type="fixed">
+    <parent link="link6"/>
+    <child link="camera_link"/>
+    <origin xyz="0.08 0 0.145" rpy="0 0 0"/>
+    <axis xyz="0 0 1"/>
+  </joint>
+
+
+  <!--pybulletでカメラの目標地点として設定する用の仮想的なlink-->
+  <link name="target_position_vertual_link"/>
+
+  <joint name="camera_target_joint" type="fixed">
+    <parent link="camera_link"/>
+    <child link="target_position_vertual_link"/>
+    <origin xyz="0.0 0.0 0.01" rpy="0 0 0"/>
+    <axis xyz="0 0 1"/>
+  </joint>
+
+
+  <!-- tip point -->
+  <!-- <link name="tip_link"/>
+    <joint name="tip_joint" type="fixed">
+    <parent link="link6"/>
+    <child link="tip_link"/>
+    <origin xyz="0.0 0.0 0.15" rpy="0 0 0"/>
+    <axis xyz="0 0 1"/>
+  </joint> -->
+
+  <!--force sensor link###############################################################-->
+  <!-- force sensor link -->
+  <link name="force_sensor_link">
+    <!--見た目の定義-->
+    <visual>
+      <origin xyz="0 0.0 0.025" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.05 0.05 0.05"/>
+      </geometry>
+      <material name="red">
+        <color rgba="1 0 0 1"/>
+      </material>
+    </visual>
+
+    <!--衝突の定義-->
+    <collision>
+      <origin xyz="0 0.0 0.025" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.05 0.05 0.05"/>
+      </geometry>
+    </collision>
+
+    <!--イナーシャの定義-->
+    <inertial>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <mass value="0.0001" />
+        <inertia ixx="0.000034533333" 
+            ixy="0"  ixz="0"
+            iyx="0"  iyy="0.000034533333" 
+            iyz="0"
+            izx="0"  izy="0"  izz="0.0000648" />
+    </inertial>
+  </link>
+
+  <joint name="force_sensor_joint" type="fixed">
+    <parent link="link6"/>
+    <child link="force_sensor_link"/>
+    <origin xyz="0.0 0.0 0.15" rpy="0 0 0"/>
+    <axis xyz="0 0 1"/>
+  </joint>
+
+</robot>
