@@ -287,8 +287,8 @@ eye in hand による物体位置の推定を行う方法を紹介します。
 
 # 参考サイトなど
 
-- [pybullet_quickstart_guide](https://qiita.com/akinami/items/eb0741b0d9c322e5d5ec)：Pybulletで使用可能な関数がまとめられたスタートガイドです（公式）
-- [PythonRobotics](https://qiita.com/akinami/items/eb0741b0d9c322e5d5ec)：Pythonで実装されたロボティクスのアルゴリズムがまとめられたリポジトリです。様々なアルゴリズムが掲載されており、ロボティクスの勉強に最適な神リポジトリです。
+- [pybullet_quickstart_guide](https://github.com/bulletphysics/bullet3/blob/master/docs/pybullet_quickstartguide.pdf)：Pybulletで使用可能な関数がまとめられたスタートガイドです（公式）
+- [PythonRobotics](https://github.com/AtsushiSakai/PythonRobotics)：Pythonで実装されたロボティクスのアルゴリズムがまとめられたリポジトリです。様々なアルゴリズムが掲載されており、ロボティクスの勉強に最適な神リポジトリです。
 
 
 ## 筆者作成
