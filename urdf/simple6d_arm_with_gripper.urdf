@@ -6,10 +6,10 @@
     <!--見た目の定義-->
     <visual>
       <!--linkの原点からのオフセット-->
-      <origin xyz="0 0 0.5" rpy="0 0 0"/>
+      <origin xyz="0 0 0.4" rpy="0 0 0"/>
       <geometry>
         <!--base_boxのサイズ（見た目）を指定-->
-        <cylinder radius="0.15" length="1.0"/>
+        <cylinder radius="0.15" length="0.8"/>
       </geometry>
       <!--色の指定-->
       <material name="white">
@@ -20,10 +20,10 @@
     <!--衝突の定義（特段の理由がなければ、基本的にvisualタグと同じ設定でよい-->
     <collision>
       <!--linkの原点からのオフセット-->
-      <origin xyz="0 0 0.5" rpy="0 0 0"/>
+      <origin xyz="0 0 0.4" rpy="0 0 0"/>
       <geometry>
         <!--base_boxのサイズ（衝突領域）を指定-->
-        <cylinder radius="0.15" length="1.0"/>
+        <cylinder radius="0.15" length="0.8"/>
       </geometry>
       <!--衝突に関する設定なので、materialタグはない-->
     </collision>
@@ -84,10 +84,7 @@
     <!--子リンク-->
     <child link="link1"/>
     <!--親リンク原点⇔子リンク原点間の距離-->
-    <origin xyz="0 0 1.1" rpy="0 0 0"/>
-    <!-- <origin xyz="0 0 1.1" rpy="0 0 3.14"/> -->
-    <!-- <origin xyz="0 0 0.9" rpy="0 0 0"/> -->
-    <!-- <origin xyz="0 0 1.2" rpy="0 0 0"/> -->
+    <origin xyz="0 0 0.80" rpy="0 0 0"/>
     <!--jointの軸方向-->
     <axis xyz="0 0 1"/>
     <limit lower="-1.57" upper="1.57" effort="10" velocity="10"/>
@@ -397,7 +394,7 @@
     <visual>
       <origin xyz="0 0.0 0.025" rpy="0 0 0"/>
       <geometry>
-        <box size="0.05 0.025 0.1"/>
+        <box size="0.05 0.05 0.1"/>
       </geometry>
       <material name="red">
         <color rgba="1 0 0 1"/>
@@ -408,7 +405,7 @@
     <collision>
       <origin xyz="0 0.0 0.025" rpy="0 0 0"/>
       <geometry>
-        <box size="0.05 0.05 0.05"/>
+        <box size="0.05 0.05 0.1"/>
       </geometry>
     </collision>
 
@@ -439,7 +436,7 @@
     <visual>
       <origin xyz="0 0.0 0.025" rpy="0 0 0"/>
       <geometry>
-        <box size="0.05 0.025 0.1"/>
+        <box size="0.05 0.05 0.1"/>
       </geometry>
       <material name="red">
         <color rgba="1 0 0 1"/>
@@ -450,7 +447,7 @@
     <collision>
       <origin xyz="0 0.0 0.025" rpy="0 0 0"/>
       <geometry>
-        <box size="0.05 0.05 0.05"/>
+        <box size="0.05 0.05 0.1"/>
       </geometry>
     </collision>
 
