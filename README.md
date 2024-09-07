@@ -20,6 +20,9 @@
     - [ロボットアームの基本的な制御](#ロボットアームの基本的な制御)
     - [ロボットアームにおけるセンサーの利用](#ロボットアームにおけるセンサーの利用)
     - [衝突判定](#衝突判定)
+  - [eye to hand による物体位置の推定](#eye-to-hand-による物体位置の推定)
+  - [eye in hand による物体位置の推定](#eye-in-hand-による物体位置の推定)
+  - [image based visual servo](#image-based-visual-servo)
   - [運動学](#運動学)
     - [三角関数による順運動学](#三角関数による順運動学)
     - [同次変換行列を用いた順運動学](#同次変換行列を用いた順運動学)
@@ -203,13 +206,13 @@ pip install scipy # version 1.11.3
 
 **手先のカメラ**
 
-<img src="./images/Common/robot_arm_tip_camera.gif" width="55%">
+<img src="./images/Common/robot_arm_tip_camera.gif" width="85%">
 
 <br>
 
 **手先の力センサー**
 
-<img src="./images/Common/robot_arm_tip_force_sensor.gif" width="55%">
+<img src="./images/Common/robot_arm_tip_force_sensor.gif" width="85%">
 
 
 詳細は「[robot_arm_sensor.ipynb](https://github.com/akinami3/PybulletRobotics/blob/main/RobotArm/robot_arm_sensor.ipynb)」を参照。
@@ -217,9 +220,30 @@ pip install scipy # version 1.11.3
 ### 衝突判定
 ロボットアームと物体の衝突判定を行う方法を紹介します。
 
-<img src="./images/Common/robot_arm_collision_check.gif" width="55%">
+<img src="./images/Common/robot_arm_collision_check.gif" width="85%">
 
 詳細は「[robot_arm_collision_check.ipynb](https://github.com/akinami3/PybulletRobotics/blob/main/RobotArm/robot_arm_collision_check.ipynb)」を参照。
+
+## eye to hand による物体位置の推定
+eye to hand による物体位置の推定を行う方法を紹介します。
+
+<img src="./images/RobotArm/robot_arm_eye_to_hand_estimate_obj_pose/eye_to_hand.png" width="85%">
+
+詳細は「[robot_arm_eye_to_hand.ipynb](https://github.com/akinami3/PybulletRobotics/blob/main/RobotArm/robot_arm_eye_to_hand_estimate_obj_pose.ipynb)」を参照。
+
+## eye in hand による物体位置の推定
+eye in hand による物体位置の推定を行う方法を紹介します。
+
+<img src="./images/RobotArm/robot_arm_eye_in_hand_estimate_obj_pose/eye_in_hand.png" width="85%">
+
+詳細は「[robot_arm_eye_in_hand.ipynb](https://github.com/akinami3/PybulletRobotics/blob/main/RobotArm/robot_arm_eye_in_hand_estimate_obj_pose.ipynb)」を参照。
+
+## image based visual servo
+画像ベースのビジュアルサーボを行う方法を紹介します。
+
+<img src="./images/RobotArm/robot_arm_image_based_visual_servo/pybullet_ibvs.gif" width="85%">
+
+詳細は「[robot_arm_image_based_visual_servo.ipynb](https://github.com/akinami3/PybulletRobotics/blob/main/RobotArm/robot_arm_image_based_visual_servo.ipynb)」を参照。
 
 ## 運動学
 
