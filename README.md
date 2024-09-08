@@ -14,6 +14,7 @@
     - [移動ロボットの基本的な制御](#移動ロボットの基本的な制御)
     - [移動ロボットにおけるセンサーの利用](#移動ロボットにおけるセンサーの利用)
   - [移動ロボットによるライントレース](#移動ロボットによるライントレース)
+  - [wheel odometryによる位置推定](#wheel-odometryによる位置推定)
   - [そのた追加予定のコンテンツ](#そのた追加予定のコンテンツ)
 - [ロボットアーム](#ロボットアーム)
   - [基本](#基本-1)
@@ -90,13 +91,13 @@ pip install scipy # version 1.11.3
 ## ARマーカーの位置·姿勢の検出
 カメラから取得した画像から、ARマーカーの位置と姿勢を検出する方法を紹介します。
 
-![](./images/Common/ar_marker_detect/ar_marker_detect.gif)
+<img src="./images/Common/ar_marker_detect/ar_marker_detect.gif" width="100%">
 
 <br>
 
 また、ARマーカを貼り付けたボックスを作成する方法も紹介します（blenderを使用）。
 
-<img src="./images/Common/ar_marker_detect/ar_marker_blender.png" width="75%">
+<img src="./images/Common/ar_marker_detect/ar_marker_blender.png" width="100%">
 
 
 詳細は「[ar_marker_detect.ipynb](https://github.com/akinami3/PybulletRobotics/blob/main/PybulletBasic/ar_marker_detect.ipynb)」を参照。
@@ -109,7 +110,7 @@ pip install scipy # version 1.11.3
 ### 移動ロボットの基本的な制御
 2輪移動ロボットを移動させるシンプルなコードを紹介します。
 
-<img src="./images/Common/mobile_robot_basic.gif" width="65%">
+<img src="./images/Common/mobile_robot_basic.gif" width="100%">
 
 
 詳細は「[mobile_robot_basic.ipynb](https://github.com/akinami3/PybulletRobotics/blob/main/MobileRobot/mobile_robot_basic.ipynb)」を参照。
@@ -122,45 +123,52 @@ pip install scipy # version 1.11.3
 - 落下防止センサー
 - バンパー
 
-<img src="./images/MobileRobot/mobile_robot_sensor.png" width="80%">  
+<img src="./images/MobileRobot/mobile_robot_sensor.png" width="100%">  
 
 <br>
 
 **超音波センサ**  
-![](./images/Common/ultra_sonic_sensor.gif)
+<img src="./images/Common/ultra_sonic_sensor.gif" width="100%">  
 
 <br>
 
 **カメラ**  
-![](./images/Common/camera.gif)
+<img src="./images/Common/camera.gif" width="100%">  
 
 <br>
 
 **Lidar**  
-![](./images/Common/Lidar.gif)
+<img src="./images/Common/Lidar.gif" width="100%">  
 
 <br>
 
 **落下防止センサー**  
-<img src="./images/Common/protect_drop_sensor.gif" width="55%">  
+<img src="./images/Common/protect_drop_sensor.gif" width="100%">  
 
 <br>
 
 **バンパー**   
-![](./images/Common/bumper_sensor.gif)
+<img src="./images/Common/bumper_sensor.gif" width="100%"> 
 
 詳細は「[mobile_robot_sensor.ipynb](https://github.com/akinami3/PybulletRobotics/blob/main/MobileRobot/mobile_robot_sensor.ipynb)」を参照。
 
 ## 移動ロボットによるライントレース
 2輪の輪動ロボットのボトムカメラを使用してライントレースを行う方法を紹介します。
 
-<img src="./images/Common/mobile_robot_line_trace.gif" width="55%">
+<img src="./images/Common/mobile_robot_line_trace.gif" width="100%">
 
 詳細は「[mobile_robot_line_trace.ipynb](https://github.com/akinami3/PybulletRobotics/blob/main/MobileRobot/mobile_robot_line_trace.ipynb)」を参照。
 
+## wheel odometryによる位置推定
+
+2輪移動ロボットにおけるwheel odometryによる位置推定を行う方法を紹介します。
+
+<img src="./images/MobileRobot/mobile_robot_wheel_odometry/wheel_odometry.gif" width="100%">
+
+詳細は「[mobile_robot_wheel_odometry.ipynb](https://github.com/akinami3/PybulletRobotics/blob/main/MobileRobot/mobile_robot_wheel_odometry.ipynb)」を参照。
+
 ## そのた追加予定のコンテンツ
 - 経路計画
-- オドメトリ
 - カルマンフィルタ
 - パーティクルフィルタ
 - SLAM
@@ -176,20 +184,20 @@ pip install scipy # version 1.11.3
 
 **位置制御**
 
-<img src="./images/Common/robot_arm_basic_position_control.gif" width="55%">
+<img src="./images/Common/robot_arm_basic_position_control.gif" width="100%">
 
 <br>
 
 **速度制御**
 
-<img src="./images/Common/robot_arm_basic_velocity_control.gif" width="55%">
+<img src="./images/Common/robot_arm_basic_velocity_control.gif" width="100%">
 
 
 <br>
 
 **トルク制御**
 
-<img src="./images/Common/robot_arm_basic_torque_control.gif" width="55%">
+<img src="./images/Common/robot_arm_basic_torque_control.gif" width="100%">
 
 
 詳細は「[robot_arm_basic.ipynb](https://github.com/akinami3/PybulletRobotics/blob/main/RobotArm/robot_arm_basic.ipynb)」を参照。
@@ -200,19 +208,19 @@ pip install scipy # version 1.11.3
 - 手先のカメラ
 - 手先の力センサー
 
-<img src="./images/RobotArm/2d_robot_arm_sensor.png" width="80%">
+<img src="./images/RobotArm/2d_robot_arm_sensor.png" width="100%">
 
 <br>
 
 **手先のカメラ**
 
-<img src="./images/Common/robot_arm_tip_camera.gif" width="85%">
+<img src="./images/Common/robot_arm_tip_camera.gif" width="100%">
 
 <br>
 
 **手先の力センサー**
 
-<img src="./images/Common/robot_arm_tip_force_sensor.gif" width="85%">
+<img src="./images/Common/robot_arm_tip_force_sensor.gif" width="100%">
 
 
 詳細は「[robot_arm_sensor.ipynb](https://github.com/akinami3/PybulletRobotics/blob/main/RobotArm/robot_arm_sensor.ipynb)」を参照。
@@ -220,28 +228,28 @@ pip install scipy # version 1.11.3
 ### 衝突判定
 ロボットアームと物体の衝突判定を行う方法を紹介します。
 
-<img src="./images/Common/robot_arm_collision_check.gif" width="85%">
+<img src="./images/Common/robot_arm_collision_check.gif" width="100%">
 
 詳細は「[robot_arm_collision_check.ipynb](https://github.com/akinami3/PybulletRobotics/blob/main/RobotArm/robot_arm_collision_check.ipynb)」を参照。
 
 ## eye to hand による物体位置の推定
 eye to hand による物体位置の推定を行う方法を紹介します。
 
-<img src="./images/RobotArm/robot_arm_eye_to_hand_estimate_obj_pose/eye_to_hand.png" width="85%">
+<img src="./images/RobotArm/robot_arm_eye_to_hand_estimate_obj_pose/eye_to_hand.png" width="80%">
 
 詳細は「[robot_arm_eye_to_hand.ipynb](https://github.com/akinami3/PybulletRobotics/blob/main/RobotArm/robot_arm_eye_to_hand_estimate_obj_pose.ipynb)」を参照。
 
 ## eye in hand による物体位置の推定
 eye in hand による物体位置の推定を行う方法を紹介します。
 
-<img src="./images/RobotArm/robot_arm_eye_in_hand_estimate_obj_pose/eye_in_hand.png" width="85%">
+<img src="./images/RobotArm/robot_arm_eye_in_hand_estimate_obj_pose/eye_in_hand.png" width="80%">
 
 詳細は「[robot_arm_eye_in_hand.ipynb](https://github.com/akinami3/PybulletRobotics/blob/main/RobotArm/robot_arm_eye_in_hand_estimate_obj_pose.ipynb)」を参照。
 
 ## image based visual servo
 画像ベースのビジュアルサーボを行う方法を紹介します。
 
-<img src="./images/RobotArm/robot_arm_image_based_visual_servo/pybullet_ibvs.gif" width="85%">
+<img src="./images/RobotArm/robot_arm_image_based_visual_servo/pybullet_ibvs.gif" width="100%">
 
 詳細は「[robot_arm_image_based_visual_servo.ipynb](https://github.com/akinami3/PybulletRobotics/blob/main/RobotArm/robot_arm_image_based_visual_servo.ipynb)」を参照。
 
