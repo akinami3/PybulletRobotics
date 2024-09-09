@@ -215,7 +215,7 @@ We introduce simple code to control a two-axis robot arm (position control, velo
 <img src="./images/Common/robot_arm_basic_torque_control.gif" width="100%">
 
 
-For details, refer to "[robot_arm_basic.ipynb](https://github.com/akinami3/PybulletRobotics/blob/main/RobotArm/robot_arm_basic_en.ipynb)」".
+For details, refer to "[robot_arm_basic.ipynb](https://github.com/akinami3/PybulletRobotics/blob/main/RobotArm/robot_arm_basic_en.ipynb)".
 
 
 ### Using Sensors in a Robot Arm
@@ -252,21 +252,21 @@ We introduce how to perform object position estimation using eye-to-hand.
 
 <img src="./images/RobotArm/robot_arm_eye_to_hand_estimate_obj_pose/eye_to_hand.png" width="80%">
 
-For details, refer to "[robot_arm_eye_to_hand.ipynb](https://github.com/akinami3/PybulletRobotics/blob/main/RobotArm/robot_arm_eye_to_hand_estimate_obj_pose_en.ipynb)」".
+For details, refer to "[robot_arm_eye_to_hand.ipynb](https://github.com/akinami3/PybulletRobotics/blob/main/RobotArm/robot_arm_eye_to_hand_estimate_obj_pose_en.ipynb)".
 
 ## Object Position Estimation using Eye-in-Hand
 We introduce how to perform object position estimation using eye-in-hand.
 
 <img src="./images/RobotArm/robot_arm_eye_in_hand_estimate_obj_pose/eye_in_hand.png" width="80%">
 
-For details, refer to "[robot_arm_eye_in_hand.ipynb](https://github.com/akinami3/PybulletRobotics/blob/main/RobotArm/robot_arm_eye_in_hand_estimate_obj_pose_en.ipynb)」".
+For details, refer to "[robot_arm_eye_in_hand.ipynb](https://github.com/akinami3/PybulletRobotics/blob/main/RobotArm/robot_arm_eye_in_hand_estimate_obj_pose_en.ipynb)".
 
 ## Image-Based Visual Servo(IBVS)
 We introduce how to perform image-based visual servoing.
 
 <img src="./images/RobotArm/robot_arm_image_based_visual_servo/pybullet_ibvs.gif" width="100%">
 
-For details, refer to "[robot_arm_image_based_visual_servo.ipynb](https://github.com/akinami3/PybulletRobotics/blob/main/RobotArm/robot_arm_image_based_visual_servo_en.ipynb)」".
+For details, refer to "[robot_arm_image_based_visual_servo.ipynb](https://github.com/akinami3/PybulletRobotics/blob/main/RobotArm/robot_arm_image_based_visual_servo_en.ipynb)".
 
 ## Kinematics
 
@@ -289,14 +289,14 @@ To be added later
 
 <!-- 解析的解法を用いたロボットアームの逆運動学を紹介します。
 
-詳細は「[robot_arm_analytical_inverse_kinematics.ipynb](https://github.com/akinami3/PybulletRobotics/blob/main/RobotArm/robot_arm_analytical_inverse_kinematics.ipynb)」を参照。 -->
+詳細は「[robot_arm_analytical_inverse_kinematics.ipynb](https://github.com/akinami3/PybulletRobotics/blob/main/RobotArm/robot_arm_analytical_inverse_kinematics.ipynb)を参照。 -->
 
 ### Inverse Kinematics using Jacobian Matrix with Numerical Methods (To be added later)
 To be added later
 
 <!-- 数値的解法を用いたロボットアームの逆運動学を紹介します。
 
-詳細は「[robot_arm_jacobian_inverse_kinematics.ipynb](https://github.com/akinami3/PybulletRobotics/blob/main/RobotArm/robot_arm_jacobian_inverse_kinematics.ipynb)」を参照。 -->
+詳細は「[robot_arm_jacobian_inverse_kinematics.ipynb](https://github.com/akinami3/PybulletRobotics/blob/main/RobotArm/robot_arm_jacobian_inverse_kinematics.ipynb)を参照。 -->
 
 ## Other Planned Content
 - PID Control
