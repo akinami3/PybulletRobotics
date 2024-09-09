@@ -1,37 +1,58 @@
 # PybulletRobotics
 
-本リポジトリでは、ロボティクスにおけるpybulletの基本的な使用方法や、ロボティクスに関連する様々なアルゴリズムをpybulletを用いて実装する方法を紹介します。
+[日本語のREADMEはこちら](https://github.com/akinami3/PybulletRobotics/blob/main/README_jp.md)
 
-# 目次
+This repository contains “code for learning robotics algorithms” that can be executed with pybullet.
+
+(The English documentation and comments on code in this repository are translated by ChatGPT.)
+
+<br>
+
+**Features:**
+
+
+- Code to help you understand the algorithms of robotics.
+- A physics simulation that can be run in the Python environment only.
+  - Can be run in the Python environment only, making it easy to build an environment and concentrate on learning the algorithm.
+
+**Notes:**
+
+Since the code is for understanding algorithms, it may not be suitable for practical use, such as “optimizing processing speed” or “excessive comments on the code”.
+
+
+
+# table of contents
 - [PybulletRobotics](#pybulletrobotics)
-- [目次](#目次)
-- [インストール方法](#インストール方法)
-- [全般](#全般)
-  - [Pybulletの基本的な使用方法](#pybulletの基本的な使用方法)
-  - [ARマーカーの位置·姿勢の検出](#arマーカーの位置姿勢の検出)
-- [移動ロボット](#移動ロボット)
-  - [基本](#基本)
-    - [移動ロボットの基本的な制御](#移動ロボットの基本的な制御)
-    - [移動ロボットにおけるセンサーの利用](#移動ロボットにおけるセンサーの利用)
-  - [移動ロボットによるライントレース](#移動ロボットによるライントレース)
-  - [wheel odometryによる位置推定](#wheel-odometryによる位置推定)
-  - [そのた追加予定のコンテンツ](#そのた追加予定のコンテンツ)
-- [ロボットアーム](#ロボットアーム)
-  - [基本](#基本-1)
-    - [ロボットアームの基本的な制御](#ロボットアームの基本的な制御)
-    - [ロボットアームにおけるセンサーの利用](#ロボットアームにおけるセンサーの利用)
-    - [衝突判定](#衝突判定)
-  - [eye to hand による物体位置の推定](#eye-to-hand-による物体位置の推定)
-  - [eye in hand による物体位置の推定](#eye-in-hand-による物体位置の推定)
-  - [image based visual servo](#image-based-visual-servo)
-  - [運動学](#運動学)
-    - [三角関数による順運動学](#三角関数による順運動学)
-    - [同次変換行列を用いた順運動学](#同次変換行列を用いた順運動学)
-    - [解析的解法による逆運動学（後日追記予定）](#解析的解法による逆運動学後日追記予定)
-    - [数値的解法によるヤコビ行列を用いた逆運動学（後日追記予定）](#数値的解法によるヤコビ行列を用いた逆運動学後日追記予定)
-  - [その他、追加予定のコンテンツ](#その他追加予定のコンテンツ)
-- [参考サイトなど](#参考サイトなど)
-  - [筆者作成](#筆者作成)
+- [table of contents](#table-of-contents)
+- [Installation](#installation)
+- [General](#general)
+  - [Basic Usage of Pybullet](#basic-usage-of-pybullet)
+  - [Detection of AR Marker Position and Orientation](#detection-of-ar-marker-position-and-orientation)
+- [Mobile Robot](#mobile-robot)
+  - [Basics](#basics)
+    - [Basic Control of a Mobile Robot](#basic-control-of-a-mobile-robot)
+    - [Using Sensors in a Mobile Robot](#using-sensors-in-a-mobile-robot)
+  - [Line Trace](#line-trace)
+  - [Position Estimation using Wheel Odometry](#position-estimation-using-wheel-odometry)
+  - [Other Planned Content](#other-planned-content)
+- [Robot Arm](#robot-arm)
+  - [Basics](#basics-1)
+    - [Basic Control of a Robot Arm](#basic-control-of-a-robot-arm)
+    - [Using Sensors in a Robot Arm](#using-sensors-in-a-robot-arm)
+    - [Collision Detection](#collision-detection)
+  - [Object Position Estimation using Eye-to-Hand](#object-position-estimation-using-eye-to-hand)
+  - [Object Position Estimation using Eye-in-Hand](#object-position-estimation-using-eye-in-hand)
+  - [Image-Based Visual Servo(IBVS)](#image-based-visual-servoibvs)
+  - [Kinematics](#kinematics)
+    - [Forward Kinematics using Trigonometric Functions](#forward-kinematics-using-trigonometric-functions)
+    - [Forward Kinematics using Homogeneous Transformation Matrix](#forward-kinematics-using-homogeneous-transformation-matrix)
+    - [Inverse Kinematics using Analytical Methods (To be added later)](#inverse-kinematics-using-analytical-methods-to-be-added-later)
+    - [Inverse Kinematics using Jacobian Matrix with Numerical Methods (To be added later)](#inverse-kinematics-using-jacobian-matrix-with-numerical-methods-to-be-added-later)
+  - [Other Planned Content](#other-planned-content-1)
+- [reference](#reference)
+  - [site](#site)
+    - [Created by the Author (written in Japanese)](#created-by-the-author-written-in-japanese)
+
 
 
 <!-- 本リポジトリで（現時点では）扱っていない主要そうなロボット
@@ -43,12 +64,12 @@
 - 蜘蛛型ロボット
 - 蛇型ロボット -->
 
-# インストール方法
-pybulletでロボティクスのシミュレーションを実施する際に必要なライブラリをインストールする手順は以下になります。
+# Installation
+The following steps outline how to install the necessary libraries for running robotics simulations with pybullet.
 
-なお、動作確認した際の各ライブラリのバージョンは、各コマンドの隣にコメントとして記載しています。
+The versions of each library used during the verification process are noted as comments next to each command.
 
-動作確認環境：Ubuntu (WSLでも可)
+Verified environment: Ubuntu (WSL is also acceptable)
 
 ```bash
 sudo apt update
@@ -79,226 +100,219 @@ pip install scipy # version 1.11.3
 ```
 
 
-# 全般
-## Pybulletの基本的な使用方法
-以下に示すpybulletを用いたロボティクスの基本的な使用方法を紹介します。
-- 環境の作成
-- urdfファイルからのロボットの読み込み
-- シミュレーションの実行
+# General
+## Basic Usage of Pybullet
+Here, we introduce the basic usage of pybullet in robotics.
+- Creating an environment
+- Loading a robot from a URDF file
+- Running a simulation
 
-詳細は「[pybullet_basic.ipynb](https://github.com/akinami3/PybulletRobotics/blob/main/PybulletBasic/pybullet_basic.ipynb)」を参照。
+For details, refer to "[pybullet_basic.ipynb](https://github.com/akinami3/PybulletRobotics/blob/main/PybulletBasic/pybullet_basic_en.ipynb)".
 
-## ARマーカーの位置·姿勢の検出
-カメラから取得した画像から、ARマーカーの位置と姿勢を検出する方法を紹介します。
+## Detection of AR Marker Position and Orientation
+This section introduces how to detect the position and orientation of AR markers from images captured by a camera.
 
 <img src="./images/Common/ar_marker_detect/ar_marker_detect.gif" width="100%">
 
 <br>
 
-また、ARマーカを貼り付けたボックスを作成する方法も紹介します（blenderを使用）。
+For details, refer to "[ar_marker_detect.ipynb](https://github.com/akinami3/PybulletRobotics/blob/main/PybulletBasic/ar_marker_detect_en.ipynb)".
 
-<img src="./images/Common/ar_marker_detect/ar_marker_blender.png" width="100%">
+# Mobile Robot
 
+## Basics
 
-詳細は「[ar_marker_detect.ipynb](https://github.com/akinami3/PybulletRobotics/blob/main/PybulletBasic/ar_marker_detect.ipynb)」を参照。
-
-# 移動ロボット
-
-## 基本
-
-
-### 移動ロボットの基本的な制御
-2輪移動ロボットを移動させるシンプルなコードを紹介します。
+### Basic Control of a Mobile Robot
+We introduce simple code to move a two-wheeled mobile robot.
 
 <img src="./images/Common/mobile_robot_basic.gif" width="100%">
 
 
-詳細は「[mobile_robot_basic.ipynb](https://github.com/akinami3/PybulletRobotics/blob/main/MobileRobot/mobile_robot_basic.ipynb)」を参照。
+For details, refer to "[mobile_robot_basic.ipynb](https://github.com/akinami3/PybulletRobotics/blob/main/MobileRobot/mobile_robot_basic_en.ipynb)".
 
-### 移動ロボットにおけるセンサーの利用
-2輪移動ロボットにおける以下のセンサーの利用方法を紹介します。
-- 超音波センサー
-- カメラ
+### Using Sensors in a Mobile Robot
+We introduce how to use the following sensors in a two-wheeled mobile robot.
+- Ultrasonic sensor
+- Camera
 - LiDAR
-- 落下防止センサー
-- バンパー
+- Fall prevention sensor
+- Bumper
 
 <img src="./images/MobileRobot/mobile_robot_sensor.png" width="100%">  
 
 <br>
 
-**超音波センサ**  
+**Ultrasonic sensor**  
 <img src="./images/Common/ultra_sonic_sensor.gif" width="100%">  
 
 <br>
 
-**カメラ**  
+**Camera**  
 <img src="./images/Common/camera.gif" width="100%">  
 
 <br>
 
-**Lidar**  
+**LiDAR**  
 <img src="./images/Common/Lidar.gif" width="100%">  
 
 <br>
 
-**落下防止センサー**  
+**Fall prevention sensor**  
 <img src="./images/Common/protect_drop_sensor.gif" width="100%">  
 
 <br>
 
-**バンパー**   
+**Bumper**   
 <img src="./images/Common/bumper_sensor.gif" width="100%"> 
 
-詳細は「[mobile_robot_sensor.ipynb](https://github.com/akinami3/PybulletRobotics/blob/main/MobileRobot/mobile_robot_sensor.ipynb)」を参照。
+For details, refer to "[mobile_robot_sensor.ipynb](https://github.com/akinami3/PybulletRobotics/blob/main/MobileRobot/mobile_robot_sensor_en.ipynb)".
 
-## 移動ロボットによるライントレース
-2輪の輪動ロボットのボトムカメラを使用してライントレースを行う方法を紹介します。
+## Line Trace
+We introduce how to perform line tracing using the bottom camera of a two-wheeled mobile robot.
 
 <img src="./images/Common/mobile_robot_line_trace.gif" width="100%">
 
-詳細は「[mobile_robot_line_trace.ipynb](https://github.com/akinami3/PybulletRobotics/blob/main/MobileRobot/mobile_robot_line_trace.ipynb)」を参照。
+For details, refer to "[mobile_robot_line_trace.ipynb](https://github.com/akinami3/PybulletRobotics/blob/main/MobileRobot/mobile_robot_line_trace_en.ipynb)".
 
-## wheel odometryによる位置推定
+## Position Estimation using Wheel Odometry
 
-2輪移動ロボットにおけるwheel odometryによる位置推定を行う方法を紹介します。
+We introduce how to perform position estimation using wheel odometry in a two-wheeled mobile robot.
 
 <img src="./images/MobileRobot/mobile_robot_wheel_odometry/wheel_odometry.gif" width="100%">
 
-詳細は「[mobile_robot_wheel_odometry.ipynb](https://github.com/akinami3/PybulletRobotics/blob/main/MobileRobot/mobile_robot_wheel_odometry.ipynb)」を参照。
+For details, refer to "[mobile_robot_wheel_odometry.ipynb](https://github.com/akinami3/PybulletRobotics/blob/main/MobileRobot/mobile_robot_wheel_odometry_en.ipynb)".
 
-## そのた追加予定のコンテンツ
-- 経路計画
-- カルマンフィルタ
-- パーティクルフィルタ
+## Other Planned Content
+- Path Planning
+- Kalman Filter
+- Particle Filter
 - SLAM
-- 教師あり学習でライントレース
-- 強化学習（Q学習）
+- Line Tracing with Supervised Learning
+- Reinforcement Learning (Q-Learning)
 
-# ロボットアーム
+# Robot Arm
 
-## 基本
+## Basics
 
-### ロボットアームの基本的な制御
-2軸ロボットアームを制御（位置制御、速度制御、トルク制御）するシンプルなコードを紹介します。
+### Basic Control of a Robot Arm
+We introduce simple code to control a two-axis robot arm (position control, velocity control, torque control).
 
-**位置制御**
+**position control**
 
 <img src="./images/Common/robot_arm_basic_position_control.gif" width="100%">
 
 <br>
 
-**速度制御**
+**velocity control**
 
 <img src="./images/Common/robot_arm_basic_velocity_control.gif" width="100%">
 
 
 <br>
 
-**トルク制御**
+**torque control**
 
 <img src="./images/Common/robot_arm_basic_torque_control.gif" width="100%">
 
 
-詳細は「[robot_arm_basic.ipynb](https://github.com/akinami3/PybulletRobotics/blob/main/RobotArm/robot_arm_basic.ipynb)」を参照。
+For details, refer to "[robot_arm_basic.ipynb](https://github.com/akinami3/PybulletRobotics/blob/main/RobotArm/robot_arm_basic_en.ipynb)」".
 
 
-### ロボットアームにおけるセンサーの利用
-2軸ロボットアームにおける以下のセンサーの利用方法を紹介します。
-- 手先のカメラ
-- 手先の力センサー
+### Using Sensors in a Robot Arm
+We introduce how to use the following sensors in a two-axis robot arm.
+- End-effector camera
+- End-effector force sensor
 
 <img src="./images/RobotArm/2d_robot_arm_sensor.png" width="100%">
 
 <br>
 
-**手先のカメラ**
+**End-effector camera**
 
 <img src="./images/Common/robot_arm_tip_camera.gif" width="100%">
 
 <br>
 
-**手先の力センサー**
+**End-effector force sensor**
 
 <img src="./images/Common/robot_arm_tip_force_sensor.gif" width="100%">
 
 
-詳細は「[robot_arm_sensor.ipynb](https://github.com/akinami3/PybulletRobotics/blob/main/RobotArm/robot_arm_sensor.ipynb)」を参照。
+For details, refer to "[robot_arm_sensor.ipynb](https://github.com/akinami3/PybulletRobotics/blob/main/RobotArm/robot_arm_sensor_en.ipynb)".
 
-### 衝突判定
-ロボットアームと物体の衝突判定を行う方法を紹介します。
+### Collision Detection
+We introduce how to perform collision detection between a robot arm and objects.
 
 <img src="./images/Common/robot_arm_collision_check.gif" width="100%">
 
-詳細は「[robot_arm_collision_check.ipynb](https://github.com/akinami3/PybulletRobotics/blob/main/RobotArm/robot_arm_collision_check.ipynb)」を参照。
+For details, refer to "[robot_arm_collision_check.ipynb](https://github.com/akinami3/PybulletRobotics/blob/main/RobotArm/robot_arm_collision_check_en.ipynb)".
 
-## eye to hand による物体位置の推定
-eye to hand による物体位置の推定を行う方法を紹介します。
+## Object Position Estimation using Eye-to-Hand
+We introduce how to perform object position estimation using eye-to-hand.
 
 <img src="./images/RobotArm/robot_arm_eye_to_hand_estimate_obj_pose/eye_to_hand.png" width="80%">
 
-詳細は「[robot_arm_eye_to_hand.ipynb](https://github.com/akinami3/PybulletRobotics/blob/main/RobotArm/robot_arm_eye_to_hand_estimate_obj_pose.ipynb)」を参照。
+For details, refer to "[robot_arm_eye_to_hand.ipynb](https://github.com/akinami3/PybulletRobotics/blob/main/RobotArm/robot_arm_eye_to_hand_estimate_obj_pose_en.ipynb)」".
 
-## eye in hand による物体位置の推定
-eye in hand による物体位置の推定を行う方法を紹介します。
+## Object Position Estimation using Eye-in-Hand
+We introduce how to perform object position estimation using eye-in-hand.
 
 <img src="./images/RobotArm/robot_arm_eye_in_hand_estimate_obj_pose/eye_in_hand.png" width="80%">
 
-詳細は「[robot_arm_eye_in_hand.ipynb](https://github.com/akinami3/PybulletRobotics/blob/main/RobotArm/robot_arm_eye_in_hand_estimate_obj_pose.ipynb)」を参照。
+For details, refer to "[robot_arm_eye_in_hand.ipynb](https://github.com/akinami3/PybulletRobotics/blob/main/RobotArm/robot_arm_eye_in_hand_estimate_obj_pose_en.ipynb)」".
 
-## image based visual servo
-画像ベースのビジュアルサーボを行う方法を紹介します。
+## Image-Based Visual Servo(IBVS)
+We introduce how to perform image-based visual servoing.
 
 <img src="./images/RobotArm/robot_arm_image_based_visual_servo/pybullet_ibvs.gif" width="100%">
 
-詳細は「[robot_arm_image_based_visual_servo.ipynb](https://github.com/akinami3/PybulletRobotics/blob/main/RobotArm/robot_arm_image_based_visual_servo.ipynb)」を参照。
+For details, refer to "[robot_arm_image_based_visual_servo.ipynb](https://github.com/akinami3/PybulletRobotics/blob/main/RobotArm/robot_arm_image_based_visual_servo_en.ipynb)」".
 
-## 運動学
+## Kinematics
 
-### 三角関数による順運動学
-三角関数を用いたロボットアームの順運動学を紹介します。
+### Forward Kinematics using Trigonometric Functions
+We introduce forward kinematics of a robot arm using trigonometric functions.
 
-![](./images/RobotArm/robot_arm_trigonometric_forward_kinematics/2d_arm_forward_kinematics_overview.png)
+![](./images/RobotArm/robot_arm_trigonometric_forward_kinematics/2d_arm_forward_kinematics_overview_en.png)
 
-詳細は「[robot_arm_trigonometric_forward_kinematics.ipynb](https://github.com/akinami3/PybulletRobotics/blob/main/RobotArm/robot_arm_trigonometric_forward_kinematics.ipynb)」を参照。
+For details, refer to "[robot_arm_trigonometric_forward_kinematics.ipynb](https://github.com/akinami3/PybulletRobotics/blob/main/RobotArm/robot_arm_trigonometric_forward_kinematics_en.ipynb)".
 
-### 同次変換行列を用いた順運動学
-同次変換行列を用いたロボットアームの順運動学を紹介します。
+### Forward Kinematics using Homogeneous Transformation Matrix
+We introduce forward kinematics of a robot arm using homogeneous transformation matrix.
 
-![](./images/RobotArm/robot_arm_homogeneous_matrix_forward_kinematics/overview.gif)
+![](./images/RobotArm/robot_arm_homogeneous_matrix_forward_kinematics/overview_en.gif)
 
-詳細は「[robot_arm_homogeneous_matrix_forward_kinematics.ipynb](https://github.com/akinami3/PybulletRobotics/blob/main/RobotArm/robot_arm_homogeneous_matrix_forward_kinematics.ipynb)」を参照。
+For details, refer to "[robot_arm_homogeneous_matrix_forward_kinematics.ipynb](https://github.com/akinami3/PybulletRobotics/blob/main/RobotArm/robot_arm_homogeneous_matrix_forward_kinematics_en.ipynb)".
 
-### 解析的解法による逆運動学（後日追記予定）
-後日追記予定
+### Inverse Kinematics using Analytical Methods (To be added later)
+To be added later
 
 <!-- 解析的解法を用いたロボットアームの逆運動学を紹介します。
 
 詳細は「[robot_arm_analytical_inverse_kinematics.ipynb](https://github.com/akinami3/PybulletRobotics/blob/main/RobotArm/robot_arm_analytical_inverse_kinematics.ipynb)」を参照。 -->
 
-### 数値的解法によるヤコビ行列を用いた逆運動学（後日追記予定）
-後日追記予定
+### Inverse Kinematics using Jacobian Matrix with Numerical Methods (To be added later)
+To be added later
 
 <!-- 数値的解法を用いたロボットアームの逆運動学を紹介します。
 
 詳細は「[robot_arm_jacobian_inverse_kinematics.ipynb](https://github.com/akinami3/PybulletRobotics/blob/main/RobotArm/robot_arm_jacobian_inverse_kinematics.ipynb)」を参照。 -->
 
-## その他、追加予定のコンテンツ
-- PID制御
-- タスク空間における動作計画
-- コンフィギュレーション空間を用いた動作計画
-- 力制御
-- 位置と力のハイブリッド制御
-- コンプライアンス制御
-<!-- - インピーダンス制御 -->
-<!-- - ビジュアルサーボ -->
+## Other Planned Content
+- PID Control
+- Motion Planning in Task Space
+- Motion Planning using Configuration Space
+- Force Control
+- Hybrid Position and Force Control
+- Compliance Control
 
-# 参考サイトなど
+# reference
 
-- [pybullet_quickstart_guide](https://github.com/bulletphysics/bullet3/blob/master/docs/pybullet_quickstartguide.pdf)：Pybulletで使用可能な関数がまとめられたスタートガイドです（公式）
-- [PythonRobotics](https://github.com/AtsushiSakai/PythonRobotics)：Pythonで実装されたロボティクスのアルゴリズムがまとめられたリポジトリです。様々なアルゴリズムが掲載されており、ロボティクスの勉強に最適な神リポジトリです。
+## site
 
-
-## 筆者作成
-- [pybulletの公式サンプル129個を全部解説する - Qiita](https://qiita.com/akinami/items/7b433b60aeb5115ba4d7)：pybulletの公式サンプル129個を解説（する予定の）記事です
-- [【図解】ロボティクスの辞書【python】](https://qiita.com/akinami/items/eb0741b0d9c322e5d5ec)：ロボティクスに関する技術を解説した記事の、まとめ記事です
+- [pybullet_quickstart_guide](https://github.com/bulletphysics/bullet3/blob/master/docs/pybullet_quickstartguide.pdf)：This is a quick start guide summarizing the functions available in pybullet (official).
+- [PythonRobotics](https://github.com/AtsushiSakai/PythonRobotics)：This repository compiles robotics algorithms implemented in Python. It includes various algorithms, making it an excellent resource for studying robotics.
+- 
+### Created by the Author (written in Japanese)
+- [pybulletの公式サンプル129個を全部解説する - Qiita](https://qiita.com/akinami/items/7b433b60aeb5115ba4d7)：This article explains (or plans to explain) 129 official pybullet samples.
+- [【図解】ロボティクスの辞書【python】](https://qiita.com/akinami/items/eb0741b0d9c322e5d5ec)：This is a summary article of articles explaining technologies related to robotics.
