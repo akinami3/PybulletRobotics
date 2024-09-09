@@ -138,7 +138,7 @@ We introduce how to use the following sensors in a two-wheeled mobile robot.
 - Fall prevention sensor
 - Bumper
 
-<img src="./images/MobileRobot/mobile_robot_sensor.png" width="100%">  
+<img src="./images/MobileRobot/mobile_robot_sensor_en.png" width="100%">  
 
 <br>
 
@@ -223,7 +223,7 @@ We introduce how to use the following sensors in a two-axis robot arm.
 - End-effector camera
 - End-effector force sensor
 
-<img src="./images/RobotArm/2d_robot_arm_sensor.png" width="100%">
+<img src="./images/RobotArm/2d_robot_arm_sensor_en.png" width="100%">
 
 <br>
 
