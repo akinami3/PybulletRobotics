@@ -17,6 +17,7 @@
     - [移動ロボットにおけるセンサーの利用](#移動ロボットにおけるセンサーの利用)
   - [移動ロボットによるライントレース](#移動ロボットによるライントレース)
   - [wheel odometryによる位置推定](#wheel-odometryによる位置推定)
+  - [particle filterによる位置推定](#particle-filterによる位置推定)
   - [そのた追加予定のコンテンツ](#そのた追加予定のコンテンツ)
 - [ロボットアーム](#ロボットアーム)
   - [基本](#基本-1)
@@ -169,10 +170,17 @@ pip install scipy # version 1.11.3
 
 詳細は「[mobile_robot_wheel_odometry.ipynb](https://github.com/akinami3/PybulletRobotics/blob/main/MobileRobot/mobile_robot_wheel_odometry_jp.ipynb)」を参照。
 
+## particle filterによる位置推定
+
+2輪移動ロボットにおけるparticle filterによる位置推定を行う方法を紹介します。
+
+<img src="./images/MobileRobot/mobile_robot_particle_filter/particle_filter.gif" width="100%">
+
+詳細は、「[mobile_robot_particle_filter.ipynb](https://github.com/akinami3/PybulletRobotics/blob/main/MobileRobot/mobile_robot_particle_filter_jp.ipynb)」を参照。
+
 ## そのた追加予定のコンテンツ
 - 経路計画
 - カルマンフィルタ
-- パーティクルフィルタ
 - SLAM
 - 教師あり学習でライントレース
 - 強化学習（Q学習）

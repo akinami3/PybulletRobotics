@@ -1,7 +1,7 @@
 <?xml version="1.0" ?>
 <robot name="simple_four_wheel_car">
   <!--車体リンク-->
-  <link name="body_link">
+  <link name="base_link">
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
@@ -58,7 +58,7 @@
 
   <!-- 車体リンク <-> 左車輪リンク をつなげるジョイント -->
   <joint name="front_wheel_joint" type="continuous">
-    <parent link="body_link"/>
+    <parent link="base_link"/>
     <child link="left_wheel_link"/>
     <origin xyz="0.0 -0.1625 -0.05" rpy="0 0 0"/>
     <axis xyz="0 1 0"/>
@@ -95,7 +95,7 @@
 
   <!-- 車体リンク <-> 右車輪リンク をつなげるジョイント -->
   <joint name="right_wheel_joint" type="continuous">
-    <parent link="body_link"/>
+    <parent link="base_link"/>
     <child link="right_wheel_link"/>
     <origin xyz="0.0 0.1625 -0.05" rpy="0 0 0"/>
     <axis xyz="0 1 0"/>
@@ -107,7 +107,8 @@
     <visual>
       <origin xyz="0 0 0" rpy="1.57 0 0 "/>
       <geometry>
-        <sphere radius="0.025"/>
+        <box size="0.05 0.05 0.05"/>
+        <!-- <sphere radius="0.025"/> -->
       </geometry>
       <material name="black">
         <color rgba="0 0 0 1"/>
@@ -116,7 +117,8 @@
     <collision>
       <origin xyz="0 0 0" rpy="1.57 0 0 "/>
       <geometry>
-        <sphere radius="0.025"/>
+        <box size="0.05 0.05 0.05"/>
+        <!-- <sphere radius="0.025"/> -->
       </geometry>
     </collision>
     <inertial>
@@ -132,7 +134,7 @@
 
   <!-- 前キャスタージョイント  -->
   <joint name="front_caster_joint" type="fixed">
-    <parent link="body_link"/>
+    <parent link="base_link"/>
     <child link="front_caster_link"/>
     <origin xyz="0.09 0.0 -0.075" rpy="0 0 0"/>
     <axis xyz="0 1 0"/>
@@ -144,7 +146,8 @@
     <visual>
       <origin xyz="0 0 0" rpy="1.57 0 0 "/>
       <geometry>
-        <sphere radius="0.025"/>
+        <box size="0.05 0.05 0.05"/>
+        <!-- <sphere radius="0.025"/> -->
       </geometry>
       <material name="black">
         <color rgba="0 0 0 1"/>
@@ -153,7 +156,8 @@
     <collision>
       <origin xyz="0 0 0" rpy="1.57 0 0 "/>
       <geometry>
-        <sphere radius="0.025"/>
+        <box size="0.05 0.05 0.05"/>
+        <!-- <sphere radius="0.025"/> -->
       </geometry>
     </collision>
     <inertial>
@@ -169,7 +173,7 @@
 
   <!-- 後キャスタージョイント  -->
   <joint name="back_caster_joint" type="fixed">
-    <parent link="body_link"/>
+    <parent link="base_link"/>
     <child link="back_caster_link"/>
     <origin xyz="-0.09 0.0 -0.075" rpy="0 0 0"/>
     <axis xyz="0 1 0"/>
@@ -205,7 +209,7 @@
 
   <!--バンパージョイント-->
   <joint name="bumper_joint" type="fixed">
-    <parent link="body_link"/>
+    <parent link="base_link"/>
     <child link="bumper_link"/>
     <origin xyz="0.155 0.0 0.0" rpy="0 0 0"/>
     <axis xyz="0 0 1"/>
@@ -243,7 +247,7 @@
 
   <!--lidarジョイント-->
   <joint name="lidar_joint" type="fixed">
-    <parent link="body_link"/>
+    <parent link="base_link"/>
     <child link="lidar_link"/>
     <origin xyz="0.0 0.0 0.065" rpy="0 0 0"/>
     <axis xyz="0 0 1"/>
@@ -281,7 +285,7 @@
 
   <!--車体リンク <-> フロントセンサリンク をつなげるジョイント-->
   <joint name="front_sensor_joint" type="fixed">
-    <parent link="body_link"/>
+    <parent link="base_link"/>
     <child link="front_sensor_link"/>
     <origin xyz="0.145 0.0 0.055" rpy="0 0 0"/>
     <axis xyz="0 0 1"/>
@@ -340,7 +344,7 @@
 
   <!--ロボット下部センサジョイント-->
   <joint name="bottom_sensor_joint" type="fixed">
-    <parent link="body_link"/>
+    <parent link="base_link"/>
     <child link="bottom_sensor_link"/>
     <origin xyz="0.145 0.0 -0.055" rpy="0 0 0"/>
     <axis xyz="0 0 1"/>

@@ -34,6 +34,7 @@ Since the code is for understanding algorithms, it may not be suitable for pract
     - [Using Sensors in a Mobile Robot](#using-sensors-in-a-mobile-robot)
   - [Line Trace](#line-trace)
   - [Position Estimation using Wheel Odometry](#position-estimation-using-wheel-odometry)
+  - [Position Estimation Using Particle Filter](#position-estimation-using-particle-filter)
   - [Other Planned Content](#other-planned-content)
 - [Robot Arm](#robot-arm)
   - [Basics](#basics-1)
@@ -181,6 +182,16 @@ We introduce how to perform position estimation using wheel odometry in a two-wh
 <img src="./images/MobileRobot/mobile_robot_wheel_odometry/wheel_odometry.gif" width="100%">
 
 For details, refer to "[mobile_robot_wheel_odometry.ipynb](https://github.com/akinami3/PybulletRobotics/blob/main/MobileRobot/mobile_robot_wheel_odometry_en.ipynb)".
+
+
+## Position Estimation Using Particle Filter
+
+This section introduces how to perform position estimation using a particle filter for a two-wheeled mobile robot.
+
+<img src="./images/MobileRobot/mobile_robot_particle_filter/particle_filter.gif" width="100%">
+
+For more details, refer to "[mobile_robot_particle_filter.ipynb](https://github.com/akinami3/PybulletRobotics/blob/main/MobileRobot/mobile_robot_particle_filter_jp.ipynb)".
+
 
 ## Other Planned Content
 - Path Planning
