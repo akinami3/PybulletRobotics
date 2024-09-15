@@ -190,7 +190,7 @@ This section introduces how to perform position estimation using a particle filt
 
 <img src="./images/MobileRobot/mobile_robot_particle_filter/particle_filter.gif" width="100%">
 
-For more details, refer to "[mobile_robot_particle_filter.ipynb](https://github.com/akinami3/PybulletRobotics/blob/main/MobileRobot/mobile_robot_particle_filter_jp.ipynb)".
+For more details, refer to "[mobile_robot_particle_filter.ipynb](https://github.com/akinami3/PybulletRobotics/blob/main/MobileRobot/mobile_robot_particle_filter_en.ipynb)".
 
 
 ## Other Planned Content
