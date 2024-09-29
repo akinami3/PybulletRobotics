@@ -312,7 +312,6 @@ For details, refer to "[robot_arm_image_based_visual_servo.ipynb](https://github
 
 ## Other Planned Content
 - PID Control
-- Motion Planning in Task Space
 - Motion Planning using Configuration Space
 - Force Control
 - Hybrid Position and Force Control
