@@ -41,14 +41,14 @@ Since the code is for understanding algorithms, it may not be suitable for pract
     - [Basic Control of a Robot Arm](#basic-control-of-a-robot-arm)
     - [Using Sensors in a Robot Arm](#using-sensors-in-a-robot-arm)
     - [Collision Detection](#collision-detection)
-  - [Object Position Estimation using Eye-to-Hand](#object-position-estimation-using-eye-to-hand)
-  - [Object Position Estimation using Eye-in-Hand](#object-position-estimation-using-eye-in-hand)
-  - [Image-Based Visual Servo(IBVS)](#image-based-visual-servoibvs)
   - [Kinematics](#kinematics)
     - [Forward Kinematics using Trigonometric Functions](#forward-kinematics-using-trigonometric-functions)
     - [Forward Kinematics using Homogeneous Transformation Matrix](#forward-kinematics-using-homogeneous-transformation-matrix)
-    - [Inverse Kinematics using Analytical Methods (To be added later)](#inverse-kinematics-using-analytical-methods-to-be-added-later)
-    - [Inverse Kinematics using Jacobian Matrix with Numerical Methods (To be added later)](#inverse-kinematics-using-jacobian-matrix-with-numerical-methods-to-be-added-later)
+    - [Inverse Kinematics using Analytical Methods](#inverse-kinematics-using-analytical-methods)
+    - [Inverse Kinematics using Jacobian Matrix with Numerical Methods](#inverse-kinematics-using-jacobian-matrix-with-numerical-methods)
+  - [Object Position Estimation using Eye-to-Hand](#object-position-estimation-using-eye-to-hand)
+  - [Object Position Estimation using Eye-in-Hand](#object-position-estimation-using-eye-in-hand)
+  - [Image-Based Visual Servo(IBVS)](#image-based-visual-servoibvs)
   - [Other Planned Content](#other-planned-content-1)
 - [reference](#reference)
   - [site](#site)
@@ -257,6 +257,38 @@ We introduce how to perform collision detection between a robot arm and objects.
 
 For details, refer to "[robot_arm_collision_check.ipynb](https://github.com/akinami3/PybulletRobotics/blob/main/RobotArm/robot_arm_collision_check_en.ipynb)".
 
+## Kinematics
+
+### Forward Kinematics using Trigonometric Functions
+We introduce forward kinematics of a robot arm using trigonometric functions.
+
+![](./images/RobotArm/robot_arm_trigonometric_forward_kinematics/2d_arm_forward_kinematics_overview_en.png)
+
+For details, refer to "[robot_arm_trigonometric_forward_kinematics.ipynb](https://github.com/akinami3/PybulletRobotics/blob/main/RobotArm/robot_arm_trigonometric_forward_kinematics_en.ipynb)".
+
+### Forward Kinematics using Homogeneous Transformation Matrix
+We introduce forward kinematics of a robot arm using homogeneous transformation matrix.
+
+![](./images/RobotArm/robot_arm_homogeneous_matrix_forward_kinematics/overview_en.gif)
+
+For details, refer to "[robot_arm_homogeneous_matrix_forward_kinematics.ipynb](https://github.com/akinami3/PybulletRobotics/blob/main/RobotArm/robot_arm_homogeneous_matrix_forward_kinematics_en.ipynb)".
+
+### Inverse Kinematics using Analytical Methods
+
+Introducing inverse kinematics for robot arms using analytical methods.
+
+![](./images/RobotArm/robot_arm_analytical_inverse_kinematics/inverse_kinematics_analytical_overview.png)
+
+For more details, refer to "[robot_arm_analytical_inverse_kinematics.ipynb](https://github.com/akinami3/PybulletRobotics/blob/main/RobotArm/robot_arm_analytical_inverse_kinematics_en.ipynb)".
+
+### Inverse Kinematics using Jacobian Matrix with Numerical Methods
+
+Introducing inverse kinematics for robot arms using numerical methods.
+
+![](./images/RobotArm/robot_arm_jacobian_inverse_kinemarics/inverse_kinematics_jacobian_pybullet.gif)
+
+For more details, refer to "[robot_arm_jacobian_inverse_kinematics.ipynb](https://github.com/akinami3/PybulletRobotics/blob/main/RobotArm/robot_arm_jacobian_inverse_kinematics_en.ipynb)".
+
 ## Object Position Estimation using Eye-to-Hand
 We introduce how to perform object position estimation using eye-to-hand.
 
@@ -277,36 +309,6 @@ We introduce how to perform image-based visual servoing.
 <img src="./images/RobotArm/robot_arm_image_based_visual_servo/pybullet_ibvs.gif" width="100%">
 
 For details, refer to "[robot_arm_image_based_visual_servo.ipynb](https://github.com/akinami3/PybulletRobotics/blob/main/RobotArm/robot_arm_image_based_visual_servo_en.ipynb)".
-
-## Kinematics
-
-### Forward Kinematics using Trigonometric Functions
-We introduce forward kinematics of a robot arm using trigonometric functions.
-
-![](./images/RobotArm/robot_arm_trigonometric_forward_kinematics/2d_arm_forward_kinematics_overview_en.png)
-
-For details, refer to "[robot_arm_trigonometric_forward_kinematics.ipynb](https://github.com/akinami3/PybulletRobotics/blob/main/RobotArm/robot_arm_trigonometric_forward_kinematics_en.ipynb)".
-
-### Forward Kinematics using Homogeneous Transformation Matrix
-We introduce forward kinematics of a robot arm using homogeneous transformation matrix.
-
-![](./images/RobotArm/robot_arm_homogeneous_matrix_forward_kinematics/overview_en.gif)
-
-For details, refer to "[robot_arm_homogeneous_matrix_forward_kinematics.ipynb](https://github.com/akinami3/PybulletRobotics/blob/main/RobotArm/robot_arm_homogeneous_matrix_forward_kinematics_en.ipynb)".
-
-### Inverse Kinematics using Analytical Methods (To be added later)
-To be added later
-
-<!-- 解析的解法を用いたロボットアームの逆運動学を紹介します。
-
-詳細は「[robot_arm_analytical_inverse_kinematics.ipynb](https://github.com/akinami3/PybulletRobotics/blob/main/RobotArm/robot_arm_analytical_inverse_kinematics.ipynb)を参照。 -->
-
-### Inverse Kinematics using Jacobian Matrix with Numerical Methods (To be added later)
-To be added later
-
-<!-- 数値的解法を用いたロボットアームの逆運動学を紹介します。
-
-詳細は「[robot_arm_jacobian_inverse_kinematics.ipynb](https://github.com/akinami3/PybulletRobotics/blob/main/RobotArm/robot_arm_jacobian_inverse_kinematics.ipynb)を参照。 -->
 
 ## Other Planned Content
 - PID Control

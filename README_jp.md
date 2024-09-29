@@ -24,14 +24,14 @@
     - [ロボットアームの基本的な制御](#ロボットアームの基本的な制御)
     - [ロボットアームにおけるセンサーの利用](#ロボットアームにおけるセンサーの利用)
     - [衝突判定](#衝突判定)
-  - [eye to hand による物体位置の推定](#eye-to-hand-による物体位置の推定)
-  - [eye in hand による物体位置の推定](#eye-in-hand-による物体位置の推定)
-  - [image based visual servo](#image-based-visual-servo)
   - [運動学](#運動学)
     - [三角関数による順運動学](#三角関数による順運動学)
     - [同次変換行列を用いた順運動学](#同次変換行列を用いた順運動学)
-    - [解析的解法による逆運動学（後日追記予定）](#解析的解法による逆運動学後日追記予定)
-    - [数値的解法によるヤコビ行列を用いた逆運動学（後日追記予定）](#数値的解法によるヤコビ行列を用いた逆運動学後日追記予定)
+    - [解析的解法による逆運動学](#解析的解法による逆運動学)
+    - [数値的解法によるヤコビ行列を用いた逆運動学](#数値的解法によるヤコビ行列を用いた逆運動学)
+  - [eye to hand による物体位置の推定](#eye-to-hand-による物体位置の推定)
+  - [eye in hand による物体位置の推定](#eye-in-hand-による物体位置の推定)
+  - [image based visual servo](#image-based-visual-servo)
   - [その他、追加予定のコンテンツ](#その他追加予定のコンテンツ)
 - [参考サイトなど](#参考サイトなど)
   - [筆者作成](#筆者作成)
@@ -242,6 +242,36 @@ pip install scipy # version 1.11.3
 
 詳細は「[robot_arm_collision_check.ipynb](https://github.com/akinami3/PybulletRobotics/blob/main/RobotArm/robot_arm_collision_check_jp.ipynb)」を参照。
 
+## 運動学
+
+### 三角関数による順運動学
+三角関数を用いたロボットアームの順運動学を紹介します。
+
+![](./images/RobotArm/robot_arm_trigonometric_forward_kinematics/2d_arm_forward_kinematics_overview.png)
+
+詳細は「[robot_arm_trigonometric_forward_kinematics.ipynb](https://github.com/akinami3/PybulletRobotics/blob/main/RobotArm/robot_arm_trigonometric_forward_kinematics_jp.ipynb)」を参照。
+
+### 同次変換行列を用いた順運動学
+同次変換行列を用いたロボットアームの順運動学を紹介します。
+
+![](./images/RobotArm/robot_arm_homogeneous_matrix_forward_kinematics/overview.gif)
+
+詳細は「[robot_arm_homogeneous_matrix_forward_kinematics.ipynb](https://github.com/akinami3/PybulletRobotics/blob/main/RobotArm/robot_arm_homogeneous_matrix_forward_kinematics_jp.ipynb)」を参照。
+
+### 解析的解法による逆運動学
+解析的解法を用いたロボットアームの逆運動学を紹介します。
+
+![](./images/RobotArm/robot_arm_analytical_inverse_kinematics/inverse_kinematics_analytical_overview.png)
+
+詳細は「[robot_arm_analytical_inverse_kinematics.ipynb](https://github.com/akinami3/PybulletRobotics/blob/main/RobotArm/robot_arm_analytical_inverse_kinematics_jp.ipynb)」を参照。
+
+### 数値的解法によるヤコビ行列を用いた逆運動学
+数値的解法を用いたロボットアームの逆運動学を紹介します。
+
+![](./images/RobotArm/robot_arm_jacobian_inverse_kinemarics/inverse_kinematics_jacobian_pybullet.gif)
+
+詳細は「[robot_arm_jacobian_inverse_kinematics.ipynb](https://github.com/akinami3/PybulletRobotics/blob/main/RobotArm/_robot_arm_jacobian_inverse_kinematics_jp.ipynb)」を参照。
+
 ## eye to hand による物体位置の推定
 eye to hand による物体位置の推定を行う方法を紹介します。
 
@@ -263,36 +293,6 @@ eye in hand による物体位置の推定を行う方法を紹介します。
 
 詳細は「[robot_arm_image_based_visual_servo.ipynb](https://github.com/akinami3/PybulletRobotics/blob/main/RobotArm/robot_arm_image_based_visual_servo_jp.ipynb)」を参照。
 
-## 運動学
-
-### 三角関数による順運動学
-三角関数を用いたロボットアームの順運動学を紹介します。
-
-![](./images/RobotArm/robot_arm_trigonometric_forward_kinematics/2d_arm_forward_kinematics_overview.png)
-
-詳細は「[robot_arm_trigonometric_forward_kinematics.ipynb](https://github.com/akinami3/PybulletRobotics/blob/main/RobotArm/robot_arm_trigonometric_forward_kinematics_jp.ipynb)」を参照。
-
-### 同次変換行列を用いた順運動学
-同次変換行列を用いたロボットアームの順運動学を紹介します。
-
-![](./images/RobotArm/robot_arm_homogeneous_matrix_forward_kinematics/overview.gif)
-
-詳細は「[robot_arm_homogeneous_matrix_forward_kinematics.ipynb](https://github.com/akinami3/PybulletRobotics/blob/main/RobotArm/robot_arm_homogeneous_matrix_forward_kinematics_jp.ipynb)」を参照。
-
-### 解析的解法による逆運動学（後日追記予定）
-後日追記予定
-
-<!-- 解析的解法を用いたロボットアームの逆運動学を紹介します。
-
-詳細は「[robot_arm_analytical_inverse_kinematics.ipynb](https://github.com/akinami3/PybulletRobotics/blob/main/RobotArm/robot_arm_analytical_inverse_kinematics.ipynb)」を参照。 -->
-
-### 数値的解法によるヤコビ行列を用いた逆運動学（後日追記予定）
-後日追記予定
-
-<!-- 数値的解法を用いたロボットアームの逆運動学を紹介します。
-
-詳細は「[robot_arm_jacobian_inverse_kinematics.ipynb](https://github.com/akinami3/PybulletRobotics/blob/main/RobotArm/robot_arm_jacobian_inverse_kinematics.ipynb)」を参照。 -->
-
 ## その他、追加予定のコンテンツ
 - PID制御
 - タスク空間における動作計画
@@ -300,8 +300,6 @@ eye in hand による物体位置の推定を行う方法を紹介します。
 - 力制御
 - 位置と力のハイブリッド制御
 - コンプライアンス制御
-<!-- - インピーダンス制御 -->
-<!-- - ビジュアルサーボ -->
 
 # 参考サイトなど
 
