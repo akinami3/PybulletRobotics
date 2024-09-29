@@ -196,7 +196,6 @@ For more details, refer to "[mobile_robot_particle_filter.ipynb](https://github.
 ## Other Planned Content
 - Path Planning
 - Kalman Filter
-- Particle Filter
 - SLAM
 - Line Tracing with Supervised Learning
 - Reinforcement Learning (Q-Learning)
