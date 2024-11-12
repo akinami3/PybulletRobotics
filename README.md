@@ -203,7 +203,6 @@ For more details, refer to "[mobile_robot_extended_kalman_filter.ipynb](https://
 
 ## Other Planned Content
 - Path Planning
-- Kalman Filter
 - SLAM
 - Line Tracing with Supervised Learning
 - Reinforcement Learning (Q-Learning)
