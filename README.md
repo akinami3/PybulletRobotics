@@ -35,6 +35,7 @@ Since the code is for understanding algorithms, it may not be suitable for pract
   - [Line Trace](#line-trace)
   - [Position Estimation using Wheel Odometry](#position-estimation-using-wheel-odometry)
   - [Position Estimation Using Particle Filter](#position-estimation-using-particle-filter)
+  - [Position Estimation using Extended Kalman Filter](#position-estimation-using-extended-kalman-filter)
   - [Other Planned Content](#other-planned-content)
 - [Robot Arm](#robot-arm)
   - [Basics](#basics-1)
@@ -192,6 +193,13 @@ This section introduces how to perform position estimation using a particle filt
 
 For more details, refer to "[mobile_robot_particle_filter.ipynb](https://github.com/akinami3/PybulletRobotics/blob/main/MobileRobot/mobile_robot_particle_filter_en.ipynb)".
 
+## Position Estimation using Extended Kalman Filter
+
+We introduce a method for position estimation using an Extended Kalman Filter in a two-wheeled mobile robot.
+
+<img src="./images/MobileRobot/mobile_robot_extended_kalman_filter/extended_kalman_filter.gif" width="100%">
+
+For more details, refer to "[mobile_robot_extended_kalman_filter.ipynb](https://github.com/akinami3/PybulletRobotics/blob/main/MobileRobot/mobile_robot_extended_kalman_filter_en.ipynb)".
 
 ## Other Planned Content
 - Path Planning
