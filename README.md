@@ -35,7 +35,7 @@ Since the code is for understanding algorithms, it may not be suitable for pract
   - [Line Trace](#line-trace)
   - [Position Estimation using Wheel Odometry](#position-estimation-using-wheel-odometry)
   - [Position Estimation Using Particle Filter](#position-estimation-using-particle-filter)
-  - [Position Estimation using Extended Kalman Filter](#position-estimation-using-extended-kalman-filter)
+  - [Position Estimation using Extended Kalman Filter(EKF)](#position-estimation-using-extended-kalman-filterekf)
   - [Other Planned Content](#other-planned-content)
 - [Robot Arm](#robot-arm)
   - [Basics](#basics-1)
@@ -193,9 +193,14 @@ This section introduces how to perform position estimation using a particle filt
 
 For more details, refer to "[mobile_robot_particle_filter.ipynb](https://github.com/akinami3/PybulletRobotics/blob/main/MobileRobot/mobile_robot_particle_filter_en.ipynb)".
 
-## Position Estimation using Extended Kalman Filter
+## Position Estimation using Extended Kalman Filter(EKF)
 
 We introduce a method for position estimation using an Extended Kalman Filter in a two-wheeled mobile robot.
+
+We introduce a method for position estimation using an Extended Kalman Filter in a two-wheeled mobile robot.
+
+(The red dot indicates the estimated position using only the motion model, and the green dot indicates the estimated position using the EKF.)
+
 
 <img src="./images/MobileRobot/mobile_robot_extended_kalman_filter/extended_kalman_filter.gif" width="100%">
 
