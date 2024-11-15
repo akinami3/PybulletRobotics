@@ -197,8 +197,6 @@ For more details, refer to "[mobile_robot_particle_filter.ipynb](https://github.
 
 We introduce a method for position estimation using an Extended Kalman Filter in a two-wheeled mobile robot.
 
-We introduce a method for position estimation using an Extended Kalman Filter in a two-wheeled mobile robot.
-
 (The red dot indicates the estimated position using only the motion model, and the green dot indicates the estimated position using the EKF.)
 
 
