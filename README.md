@@ -36,6 +36,7 @@ Since the code is for understanding algorithms, it may not be suitable for pract
   - [Position Estimation using Wheel Odometry](#position-estimation-using-wheel-odometry)
   - [Position Estimation Using Particle Filter](#position-estimation-using-particle-filter)
   - [Position Estimation using Extended Kalman Filter(EKF)](#position-estimation-using-extended-kalman-filterekf)
+  - [Local Path Planning using Dynamic Window Approach (DWA)](#local-path-planning-using-dynamic-window-approach-dwa)
   - [Other Planned Content](#other-planned-content)
 - [Robot Arm](#robot-arm)
   - [Basics](#basics-1)
