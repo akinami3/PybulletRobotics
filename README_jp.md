@@ -19,6 +19,7 @@
   - [wheel odometryによる位置推定](#wheel-odometryによる位置推定)
   - [particle filterによる位置推定](#particle-filterによる位置推定)
   - [拡張カルマンフィルタ（EKF）による位置推定](#拡張カルマンフィルタekfによる位置推定)
+  - [Dynamic Window Approach(DWA)によるローカルパスプランニング](#dynamic-window-approachdwaによるローカルパスプランニング)
   - [そのた追加予定のコンテンツ](#そのた追加予定のコンテンツ)
 - [ロボットアーム](#ロボットアーム)
   - [基本](#基本-1)
@@ -188,6 +189,14 @@ pip install scipy # version 1.11.3
 <img src="./images/MobileRobot/mobile_robot_extended_kalman_filter/extended_kalman_filter.gif" width="100%">
 
 詳細は「[mobile_robot_extended_kalman_filter.ipynb](https://github.com/akinami3/PybulletRobotics/blob/main/MobileRobot/mobile_robot_extended_kalman_filter_jp.ipynb)」を参照。
+
+## Dynamic Window Approach(DWA)によるローカルパスプランニング
+
+2輪移動ロボットにおけるDynamic Window Approach(DWA)によるローカルパスプランニングを行う方法を紹介します。
+
+<img src="./images/MobileRobot//mobile_robot_local_path_planning_dwa/dynamic_window_approach.gif" width="100%">
+
+詳細は「[mobile_robot_local_path_planning_dwa.ipynb]([https://](https://github.com/akinami3/PybulletRobotics/blob/main/MobileRobot/mobile_robot_local_path_planning_dwa_jp.ipynb))」を参照。
 
 ## そのた追加予定のコンテンツ
 - 経路計画

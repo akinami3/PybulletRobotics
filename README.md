@@ -204,6 +204,15 @@ We introduce a method for position estimation using an Extended Kalman Filter in
 
 For more details, refer to "[mobile_robot_extended_kalman_filter.ipynb](https://github.com/akinami3/PybulletRobotics/blob/main/MobileRobot/mobile_robot_extended_kalman_filter_en.ipynb)".
 
+## Local Path Planning using Dynamic Window Approach (DWA)
+
+We introduce how to perform local path planning using the Dynamic Window Approach (DWA) for a two-wheeled mobile robot.
+
+<img src="./images/MobileRobot/mobile_robot_local_path_planning_dwa/dynamic_window_approach.gif" width="100%">
+
+For details, refer to "[mobile_robot_local_path_planning_dwa.ipynb](https://github.com/akinami3/PybulletRobotics/blob/main/MobileRobot/mobile_robot_local_path_planning_dwa_en.ipynb)".
+
+
 ## Other Planned Content
 - Path Planning
 - SLAM
