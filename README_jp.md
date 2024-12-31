@@ -19,6 +19,7 @@
   - [wheel odometryによる位置推定](#wheel-odometryによる位置推定)
   - [particle filterによる位置推定](#particle-filterによる位置推定)
   - [拡張カルマンフィルタ（EKF）による位置推定](#拡張カルマンフィルタekfによる位置推定)
+  - [A\*によるグローバルパスプランニング](#aによるグローバルパスプランニング)
   - [Dynamic Window Approach(DWA)によるローカルパスプランニング](#dynamic-window-approachdwaによるローカルパスプランニング)
   - [そのた追加予定のコンテンツ](#そのた追加予定のコンテンツ)
 - [ロボットアーム](#ロボットアーム)
@@ -83,6 +84,13 @@ pip3 install opencv-contrib-python # version 4.5.4
 pip install scipy # version 1.11.3
 ```
 
+```bash
+pip install ffmpeg-python # version 0.2.0
+```
+
+```bash
+sudo apt install ffmpeg
+```
 
 # 全般
 ## Pybulletの基本的な使用方法
@@ -91,7 +99,7 @@ pip install scipy # version 1.11.3
 - urdfファイルからのロボットの読み込み
 - シミュレーションの実行
 
-詳細は「[pybullet_basic.ipynb](https://github.com/akinami3/PybulletRobotics/blob/main/PybulletBasic/pybullet_basic_jp.ipynb)」を参照。
+詳細は「[pybullet_basic.ipynb](./PybulletBasic/pybullet_basic_jp.ipynb)」を参照。
 
 ## ARマーカーの位置·姿勢の検出
 カメラから取得した画像から、ARマーカーの位置と姿勢を検出する方法を紹介します。
@@ -105,7 +113,7 @@ pip install scipy # version 1.11.3
 <img src="./images/Common/ar_marker_detect/ar_marker_blender.png" width="100%">
 
 
-詳細は「[ar_marker_detect.ipynb](https://github.com/akinami3/PybulletRobotics/blob/main/PybulletBasic/ar_marker_detect_jp.ipynb)」を参照。
+詳細は「[ar_marker_detect.ipynb](./PybulletBasic/ar_marker_detect_jp.ipynb)」を参照。
 
 # 移動ロボット
 
@@ -118,7 +126,7 @@ pip install scipy # version 1.11.3
 <img src="./images/Common/mobile_robot_basic.gif" width="100%">
 
 
-詳細は「[mobile_robot_basic.ipynb](https://github.com/akinami3/PybulletRobotics/blob/main/MobileRobot/mobile_robot_basic_jp.ipynb)」を参照。
+詳細は「[mobile_robot_basic.ipynb](./MobileRobot/mobile_robot_basic_jp.ipynb)」を参照。
 
 ### 移動ロボットにおけるセンサーの利用
 2輪移動ロボットにおける以下のセンサーの利用方法を紹介します。
@@ -155,14 +163,13 @@ pip install scipy # version 1.11.3
 **バンパー**   
 <img src="./images/Common/bumper_sensor.gif" width="100%"> 
 
-詳細は「[mobile_robot_sensor.ipynb](https://github.com/akinami3/PybulletRobotics/blob/main/MobileRobot/mobile_robot_sensor_jp.ipynb)」を参照。
-
+詳細は「[mobile_robot_sensor.ipynb](./MobileRobot/mobile_robot_sensor_jp.ipynb)」を参照。
 ## 移動ロボットによるライントレース
 2輪の輪動ロボットのボトムカメラを使用してライントレースを行う方法を紹介します。
 
 <img src="./images/Common/mobile_robot_line_trace.gif" width="100%">
 
-詳細は「[mobile_robot_line_trace.ipynb](https://github.com/akinami3/PybulletRobotics/blob/main/MobileRobot/mobile_robot_line_trace_jp.ipynb)」を参照。
+詳細は「[mobile_robot_line_trace.ipynb](./MobileRobot/mobile_robot_line_trace_jp.ipynb)」を参照。
 
 ## wheel odometryによる位置推定
 
@@ -170,7 +177,7 @@ pip install scipy # version 1.11.3
 
 <img src="./images/MobileRobot/mobile_robot_wheel_odometry/wheel_odometry.gif" width="100%">
 
-詳細は「[mobile_robot_wheel_odometry.ipynb](https://github.com/akinami3/PybulletRobotics/blob/main/MobileRobot/mobile_robot_wheel_odometry_jp.ipynb)」を参照。
+詳細は「[mobile_robot_wheel_odometry.ipynb](./MobileRobot/mobile_robot_wheel_odometry_jp.ipynb)」を参照。
 
 ## particle filterによる位置推定
 
@@ -178,7 +185,7 @@ pip install scipy # version 1.11.3
 
 <img src="./images/MobileRobot/mobile_robot_particle_filter/particle_filter.gif" width="100%">
 
-詳細は、「[mobile_robot_particle_filter.ipynb](https://github.com/akinami3/PybulletRobotics/blob/main/MobileRobot/mobile_robot_particle_filter_jp.ipynb)」を参照。
+詳細は、「[mobile_robot_particle_filter.ipynb](./MobileRobot/mobile_robot_particle_filter_jp.ipynb)」を参照。
 
 ## 拡張カルマンフィルタ（EKF）による位置推定
 
@@ -188,7 +195,17 @@ pip install scipy # version 1.11.3
 
 <img src="./images/MobileRobot/mobile_robot_extended_kalman_filter/extended_kalman_filter.gif" width="100%">
 
-詳細は「[mobile_robot_extended_kalman_filter.ipynb](https://github.com/akinami3/PybulletRobotics/blob/main/MobileRobot/mobile_robot_extended_kalman_filter_jp.ipynb)」を参照。
+詳細は「[mobile_robot_extended_kalman_filter.ipynb](./MobileRobot/mobile_robot_extended_kalman_filter_jp.ipynb)」を参照。
+
+## A*によるグローバルパスプランニング
+
+2輪移動ロボットにおけるA*によるグローバルパスプランニングを行う方法を紹介します。
+
+<img src="./images/MobileRobot/mobile_robot_global_path_planning_a_star/a_star_animation.gif" width="100%">
+
+<img src="./images/MobileRobot/mobile_robot_global_path_planning_a_star/a_star_pybullet.gif" width="100%">
+
+詳細は、「[mobile_robot_global_path_planning_a_star.ipynb](./MobileRobot/mobile_robot_global_path_planning_a_star_jp.ipynb)」を参照。
 
 ## Dynamic Window Approach(DWA)によるローカルパスプランニング
 
@@ -196,10 +213,9 @@ pip install scipy # version 1.11.3
 
 <img src="./images/MobileRobot//mobile_robot_local_path_planning_dwa/dynamic_window_approach.gif" width="100%">
 
-詳細は「[mobile_robot_local_path_planning_dwa.ipynb]([https://](https://github.com/akinami3/PybulletRobotics/blob/main/MobileRobot/mobile_robot_local_path_planning_dwa_jp.ipynb))」を参照。
+詳細は「[mobile_robot_local_path_planning_dwa.ipynb](./MobileRobot/mobile_robot_local_path_planning_dwa_jp.ipynb)」を参照。
 
 ## そのた追加予定のコンテンツ
-- 経路計画
 - SLAM
 - 教師あり学習でライントレース
 - 強化学習（Q学習）
@@ -229,8 +245,7 @@ pip install scipy # version 1.11.3
 <img src="./images/Common/robot_arm_basic_torque_control.gif" width="100%">
 
 
-詳細は「[robot_arm_basic.ipynb](https://github.com/akinami3/PybulletRobotics/blob/main/RobotArm/robot_arm_basic_jp.ipynb)」を参照。
-
+詳細は「[robot_arm_basic.ipynb](./RobotArm/robot_arm_basic_jp.ipynb)」を参照。
 
 ### ロボットアームにおけるセンサーの利用
 2軸ロボットアームにおける以下のセンサーの利用方法を紹介します。
@@ -252,14 +267,14 @@ pip install scipy # version 1.11.3
 <img src="./images/Common/robot_arm_tip_force_sensor.gif" width="100%">
 
 
-詳細は「[robot_arm_sensor.ipynb](https://github.com/akinami3/PybulletRobotics/blob/main/RobotArm/robot_arm_sensor_jp.ipynb)」を参照。
+詳細は「[robot_arm_sensor.ipynb](./RobotArm/robot_arm_sensor_jp.ipynb)」を参照。
 
 ### 衝突判定
 ロボットアームと物体の衝突判定を行う方法を紹介します。
 
 <img src="./images/Common/robot_arm_collision_check.gif" width="100%">
 
-詳細は「[robot_arm_collision_check.ipynb](https://github.com/akinami3/PybulletRobotics/blob/main/RobotArm/robot_arm_collision_check_jp.ipynb)」を参照。
+詳細は「[robot_arm_collision_check.ipynb](./RobotArm/robot_arm_collision_check_jp.ipynb)」を参照。
 
 ## 運動学
 
@@ -268,49 +283,49 @@ pip install scipy # version 1.11.3
 
 ![](./images/RobotArm/robot_arm_trigonometric_forward_kinematics/2d_arm_forward_kinematics_overview.png)
 
-詳細は「[robot_arm_trigonometric_forward_kinematics.ipynb](https://github.com/akinami3/PybulletRobotics/blob/main/RobotArm/robot_arm_trigonometric_forward_kinematics_jp.ipynb)」を参照。
+詳細は「[robot_arm_trigonometric_forward_kinematics.ipynb](./RobotArm/robot_arm_trigonometric_forward_kinematics_jp.ipynb)」を参照。
 
 ### 同次変換行列を用いた順運動学
 同次変換行列を用いたロボットアームの順運動学を紹介します。
 
 ![](./images/RobotArm/robot_arm_homogeneous_matrix_forward_kinematics/overview.gif)
 
-詳細は「[robot_arm_homogeneous_matrix_forward_kinematics.ipynb](https://github.com/akinami3/PybulletRobotics/blob/main/RobotArm/robot_arm_homogeneous_matrix_forward_kinematics_jp.ipynb)」を参照。
+詳細は「[robot_arm_homogeneous_matrix_forward_kinematics.ipynb](./RobotArm/robot_arm_homogeneous_matrix_forward_kinematics_jp.ipynb)」を参照。
 
 ### 解析的解法による逆運動学
 解析的解法を用いたロボットアームの逆運動学を紹介します。
 
 ![](./images/RobotArm/robot_arm_analytical_inverse_kinematics/inverse_kinematics_analytical_overview.png)
 
-詳細は「[robot_arm_analytical_inverse_kinematics.ipynb](https://github.com/akinami3/PybulletRobotics/blob/main/RobotArm/robot_arm_analytical_inverse_kinematics_jp.ipynb)」を参照。
+詳細は「[robot_arm_analytical_inverse_kinematics.ipynb](./RobotArm/robot_arm_analytical_inverse_kinematics_jp.ipynb)」を参照。
 
 ### 数値的解法によるヤコビ行列を用いた逆運動学
 数値的解法を用いたロボットアームの逆運動学を紹介します。
 
 ![](./images/RobotArm/robot_arm_jacobian_inverse_kinemarics/inverse_kinematics_jacobian_pybullet.gif)
 
-詳細は「[robot_arm_jacobian_inverse_kinematics.ipynb](https://github.com/akinami3/PybulletRobotics/blob/main/RobotArm/_robot_arm_jacobian_inverse_kinematics_jp.ipynb)」を参照。
+詳細は「[robot_arm_jacobian_inverse_kinematics.ipynb](./RobotArm/robot_arm_jacobian_inverse_kinematics_jp.ipynb)」を参照。
 
 ## eye to hand による物体位置の推定
 eye to hand による物体位置の推定を行う方法を紹介します。
 
 <img src="./images/RobotArm/robot_arm_eye_to_hand_estimate_obj_pose/eye_to_hand.png" width="80%">
 
-詳細は「[robot_arm_eye_to_hand.ipynb](https://github.com/akinami3/PybulletRobotics/blob/main/RobotArm/robot_arm_eye_to_hand_estimate_obj_pose_jp.ipynb)」を参照。
+詳細は「[robot_arm_eye_to_hand.ipynb](./RobotArm/robot_arm_eye_to_hand_estimate_obj_pose_jp.ipynb)」を参照。
 
 ## eye in hand による物体位置の推定
 eye in hand による物体位置の推定を行う方法を紹介します。
 
 <img src="./images/RobotArm/robot_arm_eye_in_hand_estimate_obj_pose/eye_in_hand.png" width="80%">
 
-詳細は「[robot_arm_eye_in_hand.ipynb](https://github.com/akinami3/PybulletRobotics/blob/main/RobotArm/robot_arm_eye_in_hand_estimate_obj_pose_jp.ipynb)」を参照。
+詳細は「[robot_arm_eye_in_hand.ipynb](./RobotArm/robot_arm_eye_in_hand_estimate_obj_pose_jp.ipynb)」を参照。
 
 ## image based visual servo
 画像ベースのビジュアルサーボを行う方法を紹介します。
 
 <img src="./images/RobotArm/robot_arm_image_based_visual_servo/pybullet_ibvs.gif" width="100%">
 
-詳細は「[robot_arm_image_based_visual_servo.ipynb](https://github.com/akinami3/PybulletRobotics/blob/main/RobotArm/robot_arm_image_based_visual_servo_jp.ipynb)」を参照。
+詳細は「[robot_arm_image_based_visual_servo.ipynb](./RobotArm/robot_arm_image_based_visual_servo_jp.ipynb)」を参照。
 
 ## その他、追加予定のコンテンツ
 - PID制御

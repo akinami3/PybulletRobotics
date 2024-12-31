@@ -37,6 +37,7 @@ Since the code is for understanding algorithms, it may not be suitable for pract
   - [Position Estimation Using Particle Filter](#position-estimation-using-particle-filter)
   - [Position Estimation using Extended Kalman Filter(EKF)](#position-estimation-using-extended-kalman-filterekf)
   - [Local Path Planning using Dynamic Window Approach (DWA)](#local-path-planning-using-dynamic-window-approach-dwa)
+  - [Global Path Planning using A\*](#global-path-planning-using-a)
   - [Other Planned Content](#other-planned-content)
 - [Robot Arm](#robot-arm)
   - [Basics](#basics-1)
@@ -102,6 +103,13 @@ pip3 install opencv-contrib-python # version 4.5.4
 pip install scipy # version 1.11.3
 ```
 
+```bash
+pip install ffmpeg-python # version 0.2.0
+```
+
+```bash
+sudo apt install ffmpeg
+```
 
 # General
 ## Basic Usage of Pybullet
@@ -110,7 +118,7 @@ Here, we introduce the basic usage of pybullet in robotics.
 - Loading a robot from a URDF file
 - Running a simulation
 
-For details, refer to "[pybullet_basic.ipynb](https://github.com/akinami3/PybulletRobotics/blob/main/PybulletBasic/pybullet_basic_en.ipynb)".
+For details, refer to "[pybullet_basic.ipynb](./PybulletBasic/pybullet_basic_en.ipynb)".
 
 ## Detection of AR Marker Position and Orientation
 This section introduces how to detect the position and orientation of AR markers from images captured by a camera.
@@ -119,7 +127,7 @@ This section introduces how to detect the position and orientation of AR markers
 
 <br>
 
-For details, refer to "[ar_marker_detect.ipynb](https://github.com/akinami3/PybulletRobotics/blob/main/PybulletBasic/ar_marker_detect_en.ipynb)".
+For details, refer to "[ar_marker_detect.ipynb](./PybulletBasic/ar_marker_detect_en.ipynb)".
 
 # Mobile Robot
 
@@ -131,7 +139,7 @@ We introduce simple code to move a two-wheeled mobile robot.
 <img src="./images/Common/mobile_robot_basic.gif" width="100%">
 
 
-For details, refer to "[mobile_robot_basic.ipynb](https://github.com/akinami3/PybulletRobotics/blob/main/MobileRobot/mobile_robot_basic_en.ipynb)".
+For details, refer to "[mobile_robot_basic.ipynb](./MobileRobot/mobile_robot_basic_en.ipynb)".
 
 ### Using Sensors in a Mobile Robot
 We introduce how to use the following sensors in a two-wheeled mobile robot.
@@ -168,14 +176,14 @@ We introduce how to use the following sensors in a two-wheeled mobile robot.
 **Bumper**   
 <img src="./images/Common/bumper_sensor.gif" width="100%"> 
 
-For details, refer to "[mobile_robot_sensor.ipynb](https://github.com/akinami3/PybulletRobotics/blob/main/MobileRobot/mobile_robot_sensor_en.ipynb)".
+For details, refer to "[mobile_robot_sensor.ipynb](./MobileRobot/mobile_robot_sensor_en.ipynb)".
 
 ## Line Trace
 We introduce how to perform line tracing using the bottom camera of a two-wheeled mobile robot.
 
 <img src="./images/Common/mobile_robot_line_trace.gif" width="100%">
 
-For details, refer to "[mobile_robot_line_trace.ipynb](https://github.com/akinami3/PybulletRobotics/blob/main/MobileRobot/mobile_robot_line_trace_en.ipynb)".
+For details, refer to "[mobile_robot_line_trace.ipynb](./MobileRobot/mobile_robot_line_trace_en.ipynb)".
 
 ## Position Estimation using Wheel Odometry
 
@@ -183,8 +191,7 @@ We introduce how to perform position estimation using wheel odometry in a two-wh
 
 <img src="./images/MobileRobot/mobile_robot_wheel_odometry/wheel_odometry.gif" width="100%">
 
-For details, refer to "[mobile_robot_wheel_odometry.ipynb](https://github.com/akinami3/PybulletRobotics/blob/main/MobileRobot/mobile_robot_wheel_odometry_en.ipynb)".
-
+For details, refer to "[mobile_robot_wheel_odometry.ipynb](./MobileRobot/mobile_robot_wheel_odometry_en.ipynb)".
 
 ## Position Estimation Using Particle Filter
 
@@ -192,7 +199,7 @@ This section introduces how to perform position estimation using a particle filt
 
 <img src="./images/MobileRobot/mobile_robot_particle_filter/particle_filter.gif" width="100%">
 
-For more details, refer to "[mobile_robot_particle_filter.ipynb](https://github.com/akinami3/PybulletRobotics/blob/main/MobileRobot/mobile_robot_particle_filter_en.ipynb)".
+For more details, refer to "[mobile_robot_particle_filter.ipynb](./MobileRobot/mobile_robot_particle_filter_en.ipynb)".
 
 ## Position Estimation using Extended Kalman Filter(EKF)
 
@@ -203,19 +210,26 @@ We introduce a method for position estimation using an Extended Kalman Filter in
 
 <img src="./images/MobileRobot/mobile_robot_extended_kalman_filter/extended_kalman_filter.gif" width="100%">
 
-For more details, refer to "[mobile_robot_extended_kalman_filter.ipynb](https://github.com/akinami3/PybulletRobotics/blob/main/MobileRobot/mobile_robot_extended_kalman_filter_en.ipynb)".
-
+For more details, refer to "[mobile_robot_extended_kalman_filter.ipynb](./MobileRobot/mobile_robot_extended_kalman_filter_en.ipynb)".
 ## Local Path Planning using Dynamic Window Approach (DWA)
 
 We introduce how to perform local path planning using the Dynamic Window Approach (DWA) for a two-wheeled mobile robot.
 
 <img src="./images/MobileRobot/mobile_robot_local_path_planning_dwa/dynamic_window_approach.gif" width="100%">
 
-For details, refer to "[mobile_robot_local_path_planning_dwa.ipynb](https://github.com/akinami3/PybulletRobotics/blob/main/MobileRobot/mobile_robot_local_path_planning_dwa_en.ipynb)".
+For details, refer to "[mobile_robot_local_path_planning_dwa.ipynb](./MobileRobot/mobile_robot_local_path_planning_dwa_en.ipynb)".
 
+## Global Path Planning using A*
+
+We introduce how to perform global path planning using A* for a two-wheeled mobile robot.
+
+<img src="./images/MobileRobot/mobile_robot_global_path_planning_a_star/a_star_animation.gif" width="100%">
+
+<img src="./images/MobileRobot/mobile_robot_global_path_planning_a_star/a_star_pybullet.gif" width="100%">
+
+For details, refer to "[mobile_robot_global_path_planning_a_star.ipynb](./MobileRobot/mobile_robot_global_path_planning_a_star_en.ipynb)".
 
 ## Other Planned Content
-- Path Planning
 - SLAM
 - Line Tracing with Supervised Learning
 - Reinforcement Learning (Q-Learning)
@@ -245,7 +259,7 @@ We introduce simple code to control a two-axis robot arm (position control, velo
 <img src="./images/Common/robot_arm_basic_torque_control.gif" width="100%">
 
 
-For details, refer to "[robot_arm_basic.ipynb](https://github.com/akinami3/PybulletRobotics/blob/main/RobotArm/robot_arm_basic_en.ipynb)".
+For details, refer to "[robot_arm_basic.ipynb](./RobotArm/robot_arm_basic_en.ipynb)".
 
 
 ### Using Sensors in a Robot Arm
@@ -268,14 +282,14 @@ We introduce how to use the following sensors in a two-axis robot arm.
 <img src="./images/Common/robot_arm_tip_force_sensor.gif" width="100%">
 
 
-For details, refer to "[robot_arm_sensor.ipynb](https://github.com/akinami3/PybulletRobotics/blob/main/RobotArm/robot_arm_sensor_en.ipynb)".
+For details, refer to "[robot_arm_sensor.ipynb](./RobotArm/robot_arm_sensor_en.ipynb)".
 
 ### Collision Detection
 We introduce how to perform collision detection between a robot arm and objects.
 
 <img src="./images/Common/robot_arm_collision_check.gif" width="100%">
 
-For details, refer to "[robot_arm_collision_check.ipynb](https://github.com/akinami3/PybulletRobotics/blob/main/RobotArm/robot_arm_collision_check_en.ipynb)".
+For details, refer to "[robot_arm_collision_check.ipynb](./RobotArm/robot_arm_collision_check_en.ipynb)".
 
 ## Kinematics
 
@@ -284,14 +298,14 @@ We introduce forward kinematics of a robot arm using trigonometric functions.
 
 ![](./images/RobotArm/robot_arm_trigonometric_forward_kinematics/2d_arm_forward_kinematics_overview_en.png)
 
-For details, refer to "[robot_arm_trigonometric_forward_kinematics.ipynb](https://github.com/akinami3/PybulletRobotics/blob/main/RobotArm/robot_arm_trigonometric_forward_kinematics_en.ipynb)".
+For details, refer to "[robot_arm_trigonometric_forward_kinematics.ipynb](./RobotArm/robot_arm_trigonometric_forward_kinematics_en.ipynb)".
 
 ### Forward Kinematics using Homogeneous Transformation Matrix
 We introduce forward kinematics of a robot arm using homogeneous transformation matrix.
 
 ![](./images/RobotArm/robot_arm_homogeneous_matrix_forward_kinematics/overview_en.gif)
 
-For details, refer to "[robot_arm_homogeneous_matrix_forward_kinematics.ipynb](https://github.com/akinami3/PybulletRobotics/blob/main/RobotArm/robot_arm_homogeneous_matrix_forward_kinematics_en.ipynb)".
+For details, refer to "[robot_arm_homogeneous_matrix_forward_kinematics.ipynb](./RobotArm/robot_arm_homogeneous_matrix_forward_kinematics_en.ipynb)".
 
 ### Inverse Kinematics using Analytical Methods
 
@@ -299,7 +313,7 @@ Introducing inverse kinematics for robot arms using analytical methods.
 
 ![](./images/RobotArm/robot_arm_analytical_inverse_kinematics/inverse_kinematics_analytical_overview.png)
 
-For more details, refer to "[robot_arm_analytical_inverse_kinematics.ipynb](https://github.com/akinami3/PybulletRobotics/blob/main/RobotArm/robot_arm_analytical_inverse_kinematics_en.ipynb)".
+For more details, refer to "[robot_arm_analytical_inverse_kinematics.ipynb](./RobotArm/robot_arm_analytical_inverse_kinematics_en.ipynb)".
 
 ### Inverse Kinematics using Jacobian Matrix with Numerical Methods
 
@@ -307,28 +321,28 @@ Introducing inverse kinematics for robot arms using numerical methods.
 
 ![](./images/RobotArm/robot_arm_jacobian_inverse_kinemarics/inverse_kinematics_jacobian_pybullet.gif)
 
-For more details, refer to "[robot_arm_jacobian_inverse_kinematics.ipynb](https://github.com/akinami3/PybulletRobotics/blob/main/RobotArm/robot_arm_jacobian_inverse_kinematics_en.ipynb)".
+For more details, refer to "[robot_arm_jacobian_inverse_kinematics.ipynb](./RobotArm/robot_arm_jacobian_inverse_kinematics_en.ipynb)".
 
 ## Object Position Estimation using Eye-to-Hand
 We introduce how to perform object position estimation using eye-to-hand.
 
 <img src="./images/RobotArm/robot_arm_eye_to_hand_estimate_obj_pose/eye_to_hand.png" width="80%">
 
-For details, refer to "[robot_arm_eye_to_hand.ipynb](https://github.com/akinami3/PybulletRobotics/blob/main/RobotArm/robot_arm_eye_to_hand_estimate_obj_pose_en.ipynb)".
+For details, refer to "[robot_arm_eye_to_hand.ipynb](./RobotArm/robot_arm_eye_to_hand_estimate_obj_pose_en.ipynb)".
 
 ## Object Position Estimation using Eye-in-Hand
 We introduce how to perform object position estimation using eye-in-hand.
 
 <img src="./images/RobotArm/robot_arm_eye_in_hand_estimate_obj_pose/eye_in_hand.png" width="80%">
 
-For details, refer to "[robot_arm_eye_in_hand.ipynb](https://github.com/akinami3/PybulletRobotics/blob/main/RobotArm/robot_arm_eye_in_hand_estimate_obj_pose_en.ipynb)".
+For details, refer to "[robot_arm_eye_in_hand.ipynb](./RobotArm/robot_arm_eye_in_hand_estimate_obj_pose_en.ipynb)".
 
 ## Image-Based Visual Servo(IBVS)
 We introduce how to perform image-based visual servoing.
 
 <img src="./images/RobotArm/robot_arm_image_based_visual_servo/pybullet_ibvs.gif" width="100%">
 
-For details, refer to "[robot_arm_image_based_visual_servo.ipynb](https://github.com/akinami3/PybulletRobotics/blob/main/RobotArm/robot_arm_image_based_visual_servo_en.ipynb)".
+For details, refer to "[robot_arm_image_based_visual_servo.ipynb](./RobotArm/robot_arm_image_based_visual_servo_en.ipynb)".
 
 ## Other Planned Content
 - PID Control
