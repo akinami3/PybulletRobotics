@@ -21,6 +21,7 @@
   - [拡張カルマンフィルタ（EKF）による位置推定](#拡張カルマンフィルタekfによる位置推定)
   - [A\*によるグローバルパスプランニング](#aによるグローバルパスプランニング)
   - [Dynamic Window Approach(DWA)によるローカルパスプランニング](#dynamic-window-approachdwaによるローカルパスプランニング)
+  - [Q学習（強化学習）によるライントレース](#q学習強化学習によるライントレース)
   - [そのた追加予定のコンテンツ](#そのた追加予定のコンテンツ)
 - [ロボットアーム](#ロボットアーム)
   - [基本](#基本-1)
@@ -201,7 +202,7 @@ sudo apt install ffmpeg
 
 2輪移動ロボットにおけるA*によるグローバルパスプランニングを行う方法を紹介します。
 
-<img src="./images/MobileRobot/mobile_robot_global_path_planning_a_star/a_star_animation.gif" width="100%">
+<img src="./images/MobileRobot/mobile_robot_global_path_planning_a_star/a_star_animation.gif" width="80%">
 
 <img src="./images/MobileRobot/mobile_robot_global_path_planning_a_star/a_star_pybullet.gif" width="100%">
 
@@ -215,9 +216,16 @@ sudo apt install ffmpeg
 
 詳細は「[mobile_robot_local_path_planning_dwa.ipynb](./MobileRobot/mobile_robot_local_path_planning_dwa_jp.ipynb)」を参照。
 
+## Q学習（強化学習）によるライントレース
+
+2輪移動ロボットにおけるQ学習によるライントレースを行う方法を紹介します。
+
+<img src="./images/MobileRobot/mobile_robot_q_learning/q_learning.gif" width="100%">
+
+詳細は「[mobile_robot_q_learning.ipynb](./MobileRobot/mobile_robot_reinforcement_q_learning_jp.ipynb)」を参照。
+
 ## そのた追加予定のコンテンツ
 - SLAM
-- 教師あり学習でライントレース
 - 強化学習（Q学習）
 
 # ロボットアーム

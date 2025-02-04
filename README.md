@@ -36,8 +36,9 @@ Since the code is for understanding algorithms, it may not be suitable for pract
   - [Position Estimation using Wheel Odometry](#position-estimation-using-wheel-odometry)
   - [Position Estimation Using Particle Filter](#position-estimation-using-particle-filter)
   - [Position Estimation using Extended Kalman Filter(EKF)](#position-estimation-using-extended-kalman-filterekf)
-  - [Local Path Planning using Dynamic Window Approach (DWA)](#local-path-planning-using-dynamic-window-approach-dwa)
   - [Global Path Planning using A\*](#global-path-planning-using-a)
+  - [Local Path Planning using Dynamic Window Approach (DWA)](#local-path-planning-using-dynamic-window-approach-dwa)
+  - [Line Tracing using Q-Learning (Reinforcement Learning)](#line-tracing-using-q-learning-reinforcement-learning)
   - [Other Planned Content](#other-planned-content)
 - [Robot Arm](#robot-arm)
   - [Basics](#basics-1)
@@ -211,6 +212,17 @@ We introduce a method for position estimation using an Extended Kalman Filter in
 <img src="./images/MobileRobot/mobile_robot_extended_kalman_filter/extended_kalman_filter.gif" width="100%">
 
 For more details, refer to "[mobile_robot_extended_kalman_filter.ipynb](./MobileRobot/mobile_robot_extended_kalman_filter_en.ipynb)".
+
+## Global Path Planning using A*
+
+We introduce how to perform global path planning using A* for a two-wheeled mobile robot.
+
+<img src="./images/MobileRobot/mobile_robot_global_path_planning_a_star/a_star_animation.gif" width="80%">
+
+<img src="./images/MobileRobot/mobile_robot_global_path_planning_a_star/a_star_pybullet.gif" width="100%">
+
+For details, refer to "[mobile_robot_global_path_planning_a_star.ipynb](./MobileRobot/mobile_robot_global_path_planning_a_star_en.ipynb)".
+
 ## Local Path Planning using Dynamic Window Approach (DWA)
 
 We introduce how to perform local path planning using the Dynamic Window Approach (DWA) for a two-wheeled mobile robot.
@@ -219,20 +231,17 @@ We introduce how to perform local path planning using the Dynamic Window Approac
 
 For details, refer to "[mobile_robot_local_path_planning_dwa.ipynb](./MobileRobot/mobile_robot_local_path_planning_dwa_en.ipynb)".
 
-## Global Path Planning using A*
+## Line Tracing using Q-Learning (Reinforcement Learning)
 
-We introduce how to perform global path planning using A* for a two-wheeled mobile robot.
+We introduce how to perform line tracing using Q-Learning (Reinforcement Learning) for a two-wheeled mobile robot.
 
-<img src="./images/MobileRobot/mobile_robot_global_path_planning_a_star/a_star_animation.gif" width="100%">
+<img src="./images/MobileRobot/mobile_robot_q_learning_line_trace/q_learning_line_trace.gif" width="100%">
 
-<img src="./images/MobileRobot/mobile_robot_global_path_planning_a_star/a_star_pybullet.gif" width="100%">
-
-For details, refer to "[mobile_robot_global_path_planning_a_star.ipynb](./MobileRobot/mobile_robot_global_path_planning_a_star_en.ipynb)".
+For details, refer to "[mobile_robot_q_learning_line_trace.ipynb](./MobileRobot/mobile_robot_q_learning_line_trace_en.ipynb)".
 
 ## Other Planned Content
 - SLAM
 - Line Tracing with Supervised Learning
-- Reinforcement Learning (Q-Learning)
 
 # Robot Arm
 
