@@ -239,7 +239,7 @@ We introduce how to perform line tracing using Q-Learning (Reinforcement Learnin
 <img src="./images/MobileRobot/mobile_robot_reinforcement_q_learning/q_learn.gif" width="100%">
 
 
-For details, refer to "[mobile_robot_q_learning_line_trace.ipynb](./MobileRobot/mobile_robot_q_learning_line_trace_en.ipynb)".
+For details, refer to "[mobile_robot_q_learning_line_trace.ipynb](./MobileRobot/mobile_robot_reinforcement_q_learning_en.ipynb)".
 
 ## Other Planned Content
 - SLAM
