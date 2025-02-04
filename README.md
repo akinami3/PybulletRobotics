@@ -235,7 +235,9 @@ For details, refer to "[mobile_robot_local_path_planning_dwa.ipynb](./MobileRobo
 
 We introduce how to perform line tracing using Q-Learning (Reinforcement Learning) for a two-wheeled mobile robot.
 
-<img src="./images/MobileRobot/mobile_robot_q_learning_line_trace/q_learning_line_trace.gif" width="100%">
+
+<img src="./images/MobileRobot/mobile_robot_reinforcement_q_learning/q_learn.gif" width="100%">
+
 
 For details, refer to "[mobile_robot_q_learning_line_trace.ipynb](./MobileRobot/mobile_robot_q_learning_line_trace_en.ipynb)".
 

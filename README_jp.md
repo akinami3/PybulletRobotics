@@ -220,7 +220,7 @@ sudo apt install ffmpeg
 
 2輪移動ロボットにおけるQ学習によるライントレースを行う方法を紹介します。
 
-<img src="./images/MobileRobot/mobile_robot_q_learning/q_learning.gif" width="100%">
+<img src="./images/MobileRobot/mobile_robot_reinforcement_q_learning/q_learn.gif" width="100%">
 
 詳細は「[mobile_robot_q_learning.ipynb](./MobileRobot/mobile_robot_reinforcement_q_learning_jp.ipynb)」を参照。
 
